@@ -1,23 +1,100 @@
 {
   "users": [
     {
-      "fullName": "q",
-      "username": "q",
-      "email": "q",
-      "password": "q",
+      "fullName": "Jack Fashion",
+      "username": "jack",
+      "email": "jack@email.com",
+      "password": "jack",
       "posts": [
         "",
         "",
-        "q"
+        "let's Start I'm jack",
+        "Here I share my stories with you guys!",
+        "I hate Cane  the little!",
+        "test"
       ],
       "id": 1
+    },
+    {
+      "fullName": "Jane Main",
+      "username": "jane",
+      "email": "jane@gmail.com",
+      "password": "jane",
+      "posts": [
+        "",
+        "",
+        "I'm jane Follow me ",
+        "I'm new here",
+        "Like my posts"
+      ],
+      "id": 2
+    },
+    {
+      "fullName": "Cane Sick",
+      "username": "cane",
+      "email": "cane@email.com",
+      "password": "cane",
+      "posts": [
+        "",
+        "",
+        "Here you can find cane!",
+        "Cane the great is here",
+        "Everyone! unfollow Jane quick."
+      ],
+      "id": 3
     }
   ],
   "homePosts": [
     {
       "userid": 1,
-      "userPost": "q",
+      "userPost": "let's Start I'm jack",
+      "id": 1
+    },
+    {
+      "userid": 1,
+      "userPost": "Here I share my stories with you guys!",
       "id": 2
+    },
+    {
+      "userid": 2,
+      "userPost": "I'm jane Follow me ",
+      "id": 3
+    },
+    {
+      "userid": 2,
+      "userPost": "I'm new here",
+      "id": 4
+    },
+    {
+      "userid": 2,
+      "userPost": "Like my posts",
+      "id": 5
+    },
+    {
+      "userid": 3,
+      "userPost": "Here you can find cane!",
+      "id": 6
+    },
+    {
+      "userid": 3,
+      "userPost": "Cane the great is here",
+      "id": 7
+    },
+    {
+      "userid": 3,
+      "userPost": "Everyone! unfollow Jane quick.",
+      "id": 8
+    },
+    {
+      "userid": 1,
+      "userPost": "I hate Cane  the little!",
+      "id": 9
+    },
+    {
+      "userid": 1,
+      "userPost": "test",
+      "postLikes": 0,
+      "id": 10
     }
   ]
 }
