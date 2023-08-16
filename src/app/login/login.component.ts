@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms'
 import {  Router } from '@angular/router';
+import { UserDataService } from '../services/user-data.service';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   formLogin !: FormGroup;
   
 
-  constructor (private formBuilder:FormBuilder,private http:HttpClient,private router:Router){}
+  constructor (private formBuilder:FormBuilder,private http:HttpClient
+    ,private router:Router,private userDataService:UserDataService){}
   
   ngOnInit(): void {
     this.formLogin = this.formBuilder.group({
@@ -28,10 +30,11 @@ export class LoginComponent implements OnInit {
       const user = res.find((item:any) => {
         return item.username === this.formLogin.value.username && item.password === this.formLogin.value.password;
       });
-      console.log(user); // erase this !!
+      // console.log(user); // erase this !!
       if (user) {
         alert("Right!!");
-        this.router.navigate(['home'])
+        this.userDataService.userData = user;
+        this.router.navigate(['profile']);
       }else{
         alert("somthing Wrong!")
       }

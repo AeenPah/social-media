@@ -20,7 +20,8 @@ export class SingUpComponent implements OnInit {
       fullName : [''],
       username : [''],
       email: [''],
-      password : ['']
+      password : [''],
+      posts:['','']
     })
   }
 
