@@ -11,6 +11,7 @@ import { FormGroup,FormBuilder } from '@angular/forms'
 export class SingUpComponent implements OnInit {
 
   formSignUP !: FormGroup;
+  
 
   constructor (private formBuilder:FormBuilder,private http:HttpClient){}
 

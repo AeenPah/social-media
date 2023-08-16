@@ -17,7 +17,11 @@
         /><br />
         <input class="submit" type="submit" name="" id="" />
         <div class="text">Forgot password?</div>
-        <div class="text">Not a member? Register</div>
+        <div class="text">
+          Not a member?<span [routerLink]="['/signup']" class="changerLink">
+            Register</span
+          >
+        </div>
       </form>
     </div>
   </div>

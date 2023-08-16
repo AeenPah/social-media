@@ -13,6 +13,20 @@
       "email": "jane@gmaile.com",
       "password": "98765",
       "id": 2
+    },
+    {
+      "fullName": "test",
+      "username": "test",
+      "email": "test",
+      "password": "test",
+      "id": 3
+    },
+    {
+      "fullName": "",
+      "username": "",
+      "email": "",
+      "password": "",
+      "id": 4
     }
   ],
   "comments": [

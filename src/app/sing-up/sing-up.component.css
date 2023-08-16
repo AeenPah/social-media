@@ -37,3 +37,8 @@
 .form .text {
   margin: 15px 0;
 }
+
+.changerLink:hover {
+  color: blue;
+  cursor: pointer;
+}

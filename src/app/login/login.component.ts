@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms'
+import {  Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -10,8 +12,9 @@ import { FormGroup,FormBuilder } from '@angular/forms'
 export class LoginComponent implements OnInit {
 
   formLogin !: FormGroup;
+  
 
-  constructor (private formBuilder:FormBuilder,private http:HttpClient){}
+  constructor (private formBuilder:FormBuilder,private http:HttpClient,private router:Router){}
   
   ngOnInit(): void {
     this.formLogin = this.formBuilder.group({
@@ -26,7 +29,15 @@ export class LoginComponent implements OnInit {
         return item.username === this.formLogin.value.username && item.password === this.formLogin.value.password;
       });
       console.log(user); // erase this !!
+      if (user) {
+        alert("Right!!");
+        this.router.navigate(['home'])
+      }else{
+        alert("somthing Wrong!")
+      }
       this.formLogin.reset();
     })
   }
+
+
 }

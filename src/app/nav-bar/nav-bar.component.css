@@ -1,0 +1,18 @@
+.container {
+  background-color: lightcyan;
+}
+.flex-box {
+  display: flex;
+  margin-left: 25px;
+}
+.flex-box div {
+  font-size: 1.7em;
+  margin: 15px 10px 15px 10px;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100px;
+  text-align: center;
+}
+.flex-box div:hover {
+  background-color: rgb(182, 249, 249);
+}
