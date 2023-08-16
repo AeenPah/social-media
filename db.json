@@ -20,13 +20,6 @@
       "email": "test",
       "password": "test",
       "id": 3
-    },
-    {
-      "fullName": "",
-      "username": "",
-      "email": "",
-      "password": "",
-      "id": 4
     }
   ],
   "comments": [
