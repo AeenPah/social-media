@@ -1,9 +1,18 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "fullName": "Jack Smith",
+      "username": "jackkilly",
+      "email": "jacks@gmail.com",
+      "password": "12341234",
+      "id": 1
+    },
+    {
+      "fullName": "Jane asghari",
+      "username": "janetheproff",
+      "email": "jane@gmaile.com",
+      "password": "98765",
+      "id": 2
     }
   ],
   "comments": [

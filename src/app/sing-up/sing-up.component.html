@@ -2,7 +2,7 @@
   <div class="inner-container">
     <div class="title">SIGN UP</div>
     <div class="form">
-      <form [formGroup]="formValue">
+      <form [formGroup]="formValue" (submit)="submitSignUp()">
         <label>Full Name : </label><br />
         <input
           class="input-text"
@@ -21,7 +21,7 @@
         <input
           class="input-text"
           type="text"
-          formControlName="password?"
+          formControlName="password"
         /><br />
         <input class="submit" type="submit" name="" id="" />
         <div class="text">Forgot password?</div>
