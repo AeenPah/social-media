@@ -2,15 +2,27 @@
   <div class="inner-container">
     <div class="title">SIGN UP</div>
     <div class="form">
-      <form>
+      <form [formGroup]="formValue">
         <label>Full Name : </label><br />
-        <input class="input-text" type="text" /><br />
+        <input
+          class="input-text"
+          type="text"
+          formControlName="fullName"
+        /><br />
         <label>Username : </label><br />
-        <input class="input-text" type="text" /><br />
+        <input
+          class="input-text"
+          type="text"
+          formControlName="username"
+        /><br />
         <label>Email : </label><br />
-        <input class="input-text" type="text" /><br />
+        <input class="input-text" type="text" formControlName="email" /><br />
         <label>Password : </label><br />
-        <input class="input-text" type="text" /><br />
+        <input
+          class="input-text"
+          type="text"
+          formControlName="password?"
+        /><br />
         <input class="submit" type="submit" name="" id="" />
         <div class="text">Forgot password?</div>
         <div class="text">Not a member? Register</div>
