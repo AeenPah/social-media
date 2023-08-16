@@ -2,11 +2,19 @@
   <div class="inner-container">
     <div class="title">LOGIN</div>
     <div class="form">
-      <form>
-        <label for="username">Username : </label><br />
-        <input class="input-text" type="text" /><br />
-        <label for="password">Password : </label><br />
-        <input class="input-text" type="text" /><br />
+      <form [formGroup]="formLogin" (submit)="submitLogin()">
+        <label>Username : </label><br />
+        <input
+          class="input-text"
+          type="text"
+          formControlName="username"
+        /><br />
+        <label>Password : </label><br />
+        <input
+          class="input-text"
+          type="text"
+          formControlName="password"
+        /><br />
         <input class="submit" type="submit" name="" id="" />
         <div class="text">Forgot password?</div>
         <div class="text">Not a member? Register</div>

@@ -10,12 +10,12 @@ import { FormGroup,FormBuilder } from '@angular/forms'
 })
 export class SingUpComponent implements OnInit {
 
-  formValue !: FormGroup;
+  formSignUP !: FormGroup;
 
   constructor (private formBuilder:FormBuilder,private http:HttpClient){}
 
   ngOnInit(): void {
-    this.formValue = this.formBuilder.group({
+    this.formSignUP = this.formBuilder.group({
       fullName : [''],
       username : [''],
       email: [''],
@@ -24,9 +24,9 @@ export class SingUpComponent implements OnInit {
   }
 
   submitSignUp(){
-    this.http.post('http://localhost:3000/users',this.formValue.value).subscribe(res => {
+    this.http.post('http://localhost:3000/users',this.formSignUP.value).subscribe(res => {
       console.log("http posted!!");
-      this.formValue.reset();
+      this.formSignUP.reset();
     })
   }
 }
