@@ -23,9 +23,23 @@
         "",
         "",
         "here q",
-        "big Q"
+        "big Q",
+        "homeQ"
       ],
       "id": 2
+    },
+    {
+      "fullName": "Milo Jalo",
+      "username": "milo",
+      "email": "milo@gmail.com",
+      "password": "milo",
+      "posts": [
+        "",
+        "",
+        "my first milo post",
+        "another post by milo"
+      ],
+      "id": 3
     }
   ],
   "homePosts": [
@@ -58,6 +72,21 @@
       "userid": 2,
       "userPost": "big Q",
       "id": 6
+    },
+    {
+      "userid": 3,
+      "userPost": "my first milo post",
+      "id": 7
+    },
+    {
+      "userid": 3,
+      "userPost": "another post by milo",
+      "id": 8
+    },
+    {
+      "userid": 2,
+      "userPost": "homeQ",
+      "id": 9
     }
   ]
 }
