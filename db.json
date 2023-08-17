@@ -1,4 +1,23 @@
 {
-  "users": [],
-  "homePosts": []
+  "users": [
+    {
+      "fullName": "q",
+      "username": "q",
+      "email": "q",
+      "password": "q",
+      "posts": [
+        "",
+        "",
+        "q"
+      ],
+      "id": 1
+    }
+  ],
+  "homePosts": [
+    {
+      "userid": 1,
+      "userPost": "q",
+      "id": 2
+    }
+  ]
 }
