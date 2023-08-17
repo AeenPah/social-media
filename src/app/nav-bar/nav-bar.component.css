@@ -15,4 +15,5 @@
 }
 .flex-box div:hover {
   background-color: rgb(182, 249, 249);
+  cursor: pointer;
 }

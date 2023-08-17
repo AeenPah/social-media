@@ -1,8 +1,13 @@
 <div class="container">
   <div class="posts" *ngFor="let item of allPostsInf.reverse()">
-    <hr />
-    <div>{{ item.userPost }}</div>
-    <div>{{ allUsersInf[item.userid - 1].fullName }}</div>
+    <div class="full-name">{{ allUsersInf[item.userid - 1].fullName }}</div>
+    <div class="post">{{ item.userPost }}</div>
+    <div class="post-reactions">
+      <div class="likes">number likes</div>
+      <button>Like</button>
+      <div class="likes">number comments</div>
+      <button>Comment</button>
+    </div>
     <hr />
   </div>
 </div>

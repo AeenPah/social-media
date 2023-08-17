@@ -5,10 +5,10 @@
     <div>Username : {{ user.username }}</div>
     <div>Email : {{ user.email }}</div>
   </div>
+  <hr />
+  <hr />
   <!-- -------- -->
   <div class="upload-post">
-    <hr />
-    <hr />
     <div>Let's post something</div>
     <div>date: {{ postDate | date : "short" }}</div>
     <div>
@@ -19,7 +19,10 @@
   <!-- -------- -->
   <div class="prev-posts">
     <div *ngFor="let post of user.posts">
-      <div>{{ post }}</div>
+      <div *ngIf="post != ''">
+        <div class="inner-post">{{ post }}</div>
+        <button>Delete</button>
+      </div>
     </div>
   </div>
 </div>

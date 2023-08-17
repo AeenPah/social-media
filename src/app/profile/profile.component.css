@@ -2,4 +2,30 @@
   margin: 0 auto;
   width: 85%;
   background-color: rgb(7, 255, 255);
+  height: 100vh;
+}
+
+.container > * {
+  margin-left: 40px;
+}
+.user-information {
+  font-size: 1.55em;
+  padding: 20px 0 10px 0;
+}
+
+.upload-post {
+  font-size: 1.3em;
+  padding: 20px 0;
+}
+.upload-post input,
+button {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.inner-post {
+  display: inline;
+  font-size: 1.3em;
+  margin-top: 20px;
+  margin-right: 20px;
 }
