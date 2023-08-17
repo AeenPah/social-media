@@ -28,7 +28,8 @@ export class LoginComponent implements OnInit {
   submitLogin(){
     this.http.get<any>('http://localhost:3000/users').subscribe(res => {
       const user = res.find((item:any) => {
-        return item.username === this.formLogin.value.username && item.password === this.formLogin.value.password;
+        return item.username === this.formLogin.value.username &&
+         item.password === this.formLogin.value.password;
       });
       if (user) {
         alert("Right!!");

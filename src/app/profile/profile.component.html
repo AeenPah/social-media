@@ -18,10 +18,12 @@
   </div>
   <!-- -------- -->
   <div class="prev-posts">
-    <div *ngFor="let post of user.posts">
+    <div *ngFor="let post of user.posts; let i = index">
       <div *ngIf="post != ''">
-        <div class="inner-post">{{ post }}</div>
-        <button>Delete</button>
+        <div class="inner-post">{{ i }} // {{ post }}</div>
+        <button (click)="deleteText(i)">Delete</button>
+        <button (click)="deleteTextHome(i)">DeleteHome</button>
+        <button (click)="deleteTextBoth(i)">DeleteBoth</button>
       </div>
     </div>
   </div>
