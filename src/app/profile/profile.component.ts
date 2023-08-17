@@ -19,14 +19,10 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.userDataService.userData;
-    // console.log(this.user.post);
   }
 
   postText(){
-    // if (this.user.posts.lenght > 1) {
-      // }
     this.test = this.user.posts;
-    console.log(this.user.posts.lengh)
     this.test.push(this.posttxt);
     this.user.posts = this.test;
     this.http.put<any>('http://localhost:3000/users/'+this.user.id,this.user).subscribe(res =>{

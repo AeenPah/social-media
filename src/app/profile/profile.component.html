@@ -6,7 +6,7 @@
     <div>Email : {{ user.email }}</div>
   </div>
   <!-- -------- -->
-  <div class="post">
+  <div class="upload-post">
     <hr />
     <hr />
     <div>Let's post something</div>
@@ -15,5 +15,11 @@
       <input type="text" [(ngModel)]="posttxt" />
     </div>
     <button (click)="postText()">POST</button>
+  </div>
+  <!-- -------- -->
+  <div class="prev-posts">
+    <div *ngFor="let post of user.posts">
+      <div>{{ post }}</div>
+    </div>
   </div>
 </div>
