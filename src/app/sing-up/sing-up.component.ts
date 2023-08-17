@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,9 +12,9 @@ import { FormGroup,FormBuilder } from '@angular/forms'
 export class SingUpComponent implements OnInit {
 
   formSignUP !: FormGroup;
-  
+  primaryPosts = ['',''];
 
-  constructor (private formBuilder:FormBuilder,private http:HttpClient){}
+  constructor (private formBuilder:FormBuilder,private http:HttpClient,private router:Router){}
 
   ngOnInit(): void {
     this.formSignUP = this.formBuilder.group({
@@ -21,14 +22,17 @@ export class SingUpComponent implements OnInit {
       username : [''],
       email: [''],
       password : [''],
-      posts:['','']
+      posts:[''] 
     })
   }
 
   submitSignUp(){
+    this.formSignUP.value.posts = this.primaryPosts;
     this.http.post('http://localhost:3000/users',this.formSignUP.value).subscribe(res => {
       console.log("http posted!!");
       this.formSignUP.reset();
+      this.router.navigate(['/login']);
     })
+
   }
 }
