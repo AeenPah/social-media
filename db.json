@@ -8,41 +8,56 @@
       "posts": [
         "",
         "",
-        "a",
-        "a",
-        "first a ",
-        "sd",
-        "sd",
-        "not",
-        "not a",
-        "another posr",
-        "another post"
+        "first post",
+        "and second",
+        "look at home"
       ],
       "id": 1
     },
     {
-      "fullName": "b",
-      "username": "b",
-      "email": "b",
-      "password": "b",
+      "fullName": "q",
+      "username": "q",
+      "email": "q",
+      "password": "q",
       "posts": [
         "",
         "",
-        "ab",
-        "ab"
+        "here q",
+        "big Q"
       ],
+      "id": 2
+    }
+  ],
+  "homePosts": [
+    {
+      "userid": 1,
+      "userPost": "new home",
+      "id": 1
+    },
+    {
+      "userid": 1,
+      "userPost": "first post",
       "id": 2
     },
     {
-      "fullName": "c",
-      "username": "c",
-      "email": "c",
-      "password": "c",
-      "posts": [
-        "",
-        ""
-      ],
+      "userid": 1,
+      "userPost": "and second",
       "id": 3
+    },
+    {
+      "userid": 1,
+      "userPost": "look at home",
+      "id": 4
+    },
+    {
+      "userid": 2,
+      "userPost": "here q",
+      "id": 5
+    },
+    {
+      "userid": 2,
+      "userPost": "big Q",
+      "id": 6
     }
   ]
 }

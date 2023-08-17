@@ -10,7 +10,7 @@
     <hr />
     <hr />
     <div>Let's post something</div>
-    <div>date: {{ postDate | date }}</div>
+    <div>date: {{ postDate | date : "short" }}</div>
     <div>
       <input type="text" [(ngModel)]="posttxt" />
     </div>

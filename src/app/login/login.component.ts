@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
       const user = res.find((item:any) => {
         return item.username === this.formLogin.value.username && item.password === this.formLogin.value.password;
       });
-      // console.log(user); // erase this !!
       if (user) {
         alert("Right!!");
         this.userDataService.userData = user;
