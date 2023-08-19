@@ -53,6 +53,18 @@
         "test from a number 2"
       ],
       "id": 4
+    },
+    {
+      "fullName": "lko",
+      "username": "lko",
+      "email": "lko",
+      "password": "lko",
+      "posts": [
+        "",
+        "",
+        "first post"
+      ],
+      "id": 5
     }
   ],
   "homePosts": [
@@ -73,14 +85,14 @@
     {
       "userid": 1,
       "userPost": "I'll post short story",
-      "postLikes": 1,
+      "postLikes": 3,
       "postLikeBool": false,
       "id": 3
     },
     {
       "userid": 1,
       "userPost": "<3 <3 babe.",
-      "postLikes": 2,
+      "postLikes": 4,
       "postLikeBool": false,
       "id": 4
     },
@@ -94,7 +106,7 @@
     {
       "userid": 2,
       "userPost": "like my posts! now!",
-      "postLikes": 3,
+      "postLikes": 4,
       "postLikeBool": false,
       "id": 6
     },
@@ -115,7 +127,7 @@
     {
       "userid": 4,
       "userPost": "test from a",
-      "postLikes": 0,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 9
     },
@@ -125,6 +137,13 @@
       "postLikes": 0,
       "postLikeBool": false,
       "id": 10
+    },
+    {
+      "userid": 5,
+      "userPost": "first post",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 11
     }
   ]
 }

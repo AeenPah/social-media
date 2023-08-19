@@ -20,7 +20,7 @@
   <div class="prev-posts">
     <div *ngFor="let post of user.posts; let i = index">
       <div *ngIf="post != ''">
-        <div class="inner-post">{{ i }} // {{ post }}</div>
+        <div class="inner-post">{{ i - 1 }} // {{ post }}</div>
         <button (click)="deleteTextHome(i)">Delete</button>
       </div>
     </div>
