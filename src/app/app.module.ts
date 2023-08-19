@@ -9,7 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ProfileComponent } from './profile/profile.component'
+import { ProfileComponent } from './profile/profile.component';
+import { UserProfileComponent } from './user-profile/user-profile.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProfileComponent } from './profile/profile.component'
     HomeComponent,
     LoginComponent,
     SingUpComponent,
-    ProfileComponent
+    ProfileComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

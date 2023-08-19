@@ -40,6 +40,19 @@
         "Asghar likes here!"
       ],
       "id": 3
+    },
+    {
+      "fullName": "a",
+      "username": "a",
+      "email": "a",
+      "password": "a",
+      "posts": [
+        "",
+        "",
+        "test from a",
+        "test from a number 2"
+      ],
+      "id": 4
     }
   ],
   "homePosts": [
@@ -95,9 +108,23 @@
     {
       "userid": 3,
       "userPost": "Asghar likes here!",
-      "postLikes": 0,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 8
+    },
+    {
+      "userid": 4,
+      "userPost": "test from a",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 9
+    },
+    {
+      "userid": 4,
+      "userPost": "test from a number 2",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 10
     }
   ]
 }

@@ -1,6 +1,8 @@
 <div class="container">
   <div class="posts" *ngFor="let item of allPostsInf.reverse()">
-    <div class="full-name">{{ allUsersInf[item.userid - 1].fullName }}</div>
+    <div class="full-name" [routerLink]="['/user-profile/' + item.userid]">
+      {{ allUsersInf[item.userid - 1].fullName }}
+    </div>
     <div class="post">{{ item.userPost }}</div>
     <div class="post-reactions">
       <div class="likes">{{ item.postLikes }}</div>

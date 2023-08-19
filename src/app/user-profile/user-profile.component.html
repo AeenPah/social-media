@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="user-information">
+    <div>profile avatar</div>
+    <div>Full Name : {{ userall.fullName }}</div>
+    <div>Username : {{ userall.username }}</div>
+    <div>Email : {{ userall.email }}</div>
+  </div>
+  <hr />
+  <hr />
+  <!-- -------- -->
+  <div class="prev-posts">
+    <div *ngFor="let post of userall.posts; let i = index">
+      <div *ngIf="post != ''">
+        <div class="inner-post">{{ i }} // {{ post }}</div>
+      </div>
+    </div>
+  </div>
+</div>
