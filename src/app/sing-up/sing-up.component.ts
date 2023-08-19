@@ -31,8 +31,9 @@ export class SingUpComponent implements OnInit {
     this.formSignUP.value.posts = this.primaryPosts;
     this.http.post('http://localhost:3000/users',this.formSignUP.value).subscribe(res => {
       console.log("http posted!!");
-      this.formSignUP.reset();
+      this.canDeactiveBool = false;
       this.router.navigate(['/login']);
+      this.formSignUP.reset();
     })
   }
   toLogin(){

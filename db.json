@@ -1,33 +1,103 @@
 {
   "users": [
     {
-      "fullName": "a",
-      "username": "a",
-      "email": "a",
-      "password": "a",
+      "fullName": "Jack Smith",
+      "username": "jack",
+      "email": "jackS@gmail.com",
+      "password": "jack",
       "posts": [
         "",
         "",
-        "1234",
-        "like me"
+        "I'm Jack here",
+        "Follow jack the great ",
+        "I'll post short story",
+        "<3 <3 babe."
       ],
       "id": 1
+    },
+    {
+      "fullName": "Milo Best",
+      "username": "milo",
+      "email": "miloB@email.com",
+      "password": "milo",
+      "posts": [
+        "",
+        "",
+        "milo is here guyss!",
+        "like my posts! now!"
+      ],
+      "id": 2
+    },
+    {
+      "fullName": "Jane July",
+      "username": "jane",
+      "email": "jane@email.com",
+      "password": "jane",
+      "posts": [
+        "",
+        "",
+        "jane signup here so be happy!",
+        "Asghar likes here!"
+      ],
+      "id": 3
     }
   ],
   "homePosts": [
     {
       "userid": 1,
-      "userPost": "1234",
-      "postLikes": 2,
+      "userPost": "I'm Jack here",
+      "postLikes": 0,
       "postLikeBool": false,
       "id": 1
     },
     {
       "userid": 1,
-      "userPost": "like me",
-      "postLikes": 4,
+      "userPost": "Follow jack the great ",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 2
+    },
+    {
+      "userid": 1,
+      "userPost": "I'll post short story",
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 3
+    },
+    {
+      "userid": 1,
+      "userPost": "<3 <3 babe.",
+      "postLikes": 2,
+      "postLikeBool": false,
+      "id": 4
+    },
+    {
+      "userid": 2,
+      "userPost": "milo is here guyss!",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 5
+    },
+    {
+      "userid": 2,
+      "userPost": "like my posts! now!",
+      "postLikes": 3,
+      "postLikeBool": false,
+      "id": 6
+    },
+    {
+      "userid": 3,
+      "userPost": "jane signup here so be happy!",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 7
+    },
+    {
+      "userid": 3,
+      "userPost": "Asghar likes here!",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 8
     }
   ]
 }
