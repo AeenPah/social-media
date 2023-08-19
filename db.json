@@ -33,13 +33,13 @@
     {
       "userid": 1,
       "userPost": "I'm jack",
-      "postLikes": 8,
+      "postLikes": 10,
       "id": 1
     },
     {
       "userid": 2,
       "userPost": "a",
-      "postLikes": 17,
+      "postLikes": 19,
       "id": 2
     },
     {
@@ -52,21 +52,21 @@
     {
       "userid": 2,
       "userPost": "test1",
-      "postLikes": 1,
+      "postLikes": 2,
       "postLikeBool": false,
       "id": 4
     },
     {
       "userid": 2,
       "userPost": "test2",
-      "postLikes": 1,
+      "postLikes": 2,
       "postLikeBool": false,
       "id": 5
     },
     {
       "userid": 2,
       "userPost": "test3",
-      "postLikes": 1,
+      "postLikes": 2,
       "postLikeBool": false,
       "id": 6
     }

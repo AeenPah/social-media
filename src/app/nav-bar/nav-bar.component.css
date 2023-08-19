@@ -1,5 +1,5 @@
 .container {
-  background-color: lightcyan;
+  background-color: #c2f4e7;
 }
 .flex-box {
   display: flex;
@@ -14,6 +14,6 @@
   text-align: center;
 }
 .flex-box div:hover {
-  background-color: rgb(182, 249, 249);
+  background-color: #b8dfd5;
   cursor: pointer;
 }

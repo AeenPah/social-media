@@ -51,7 +51,6 @@ export class ProfileComponent implements OnInit {
     this.http.put<any>('http://localhost:3000/users/'+this.user.id,this.user).subscribe(res =>{
       console.log(res)
     });
-   
   }
   deleteTextHome(a:number){
     this.http.get<any>('http://localhost:3000/homePosts').subscribe(res => {
