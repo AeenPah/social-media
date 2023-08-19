@@ -21,9 +21,7 @@
     <div *ngFor="let post of user.posts; let i = index">
       <div *ngIf="post != ''">
         <div class="inner-post">{{ i }} // {{ post }}</div>
-        <button (click)="deleteText(i)">Delete</button>
-        <button (click)="deleteTextHome(i)">DeleteHome</button>
-        <button (click)="deleteTextBoth(i)">DeleteBoth</button>
+        <button (click)="deleteTextHome(i)">Delete</button>
       </div>
     </div>
   </div>

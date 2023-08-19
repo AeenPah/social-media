@@ -45,7 +45,7 @@ export class ProfileComponent implements OnInit {
   deleteText(a:number){
     // ----
     // this.http.delete('http://localhost:3000/users/'+this.user.id).subscribe()
-    console.log(this.currentPost[a]);
+    // console.log(this.currentPost[a]);
     this.currentPost.splice(a,1);
     this.user.posts = this.currentPost;
     this.http.put<any>('http://localhost:3000/users/'+this.user.id,this.user).subscribe(res =>{
@@ -56,25 +56,21 @@ export class ProfileComponent implements OnInit {
     this.http.get<any>('http://localhost:3000/homePosts').subscribe(res => {
       const homepost = res.find((item:any) => {
          this.tempUser = item.id 
-         console.log(item.userPost);
-         console.log(this.anotherCurrntPost[a]);
-
+        //  console.log(item.userPost);
+        //  console.log(this.anotherCurrntPost[a]);
+         
          return item.userPost == this.anotherCurrntPost[a]
       });
       if (homepost) {
         console.log('we find it');
-        console.log(this.tempUser);
+        // console.log(this.tempUser);
         this.http.delete('http://localhost:3000/homePosts/' + this.tempUser).subscribe(res => {
-          console.log(res)
+          // console.log(res)
         });
+        this.deleteText(a);
       }else{
         console.log('We can not find the post in home!')
       }
     })
-  }
-  // this is a bug here!!
-  deleteTextBoth(a:number){
-    this.deleteTextHome(a);
-    this.deleteText(a);
   }
 }
