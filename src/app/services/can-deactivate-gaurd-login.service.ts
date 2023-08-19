@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-// import { LoginComponent } from '../login/login.component';
 
 export interface ICanDeactivateComponent{
   canExit: () => Observable<boolean> | Promise<boolean> | boolean
@@ -15,7 +14,8 @@ export class CanDeactivateGaurdLoginService implements CanDeactivate<ICanDeactiv
 
   constructor() { }
 
-  canDeactivate(component: ICanDeactivateComponent, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot,
+  canDeactivate(component: ICanDeactivateComponent,
+     currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot,
      nextState: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     return component.canExit();
   }
