@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserDataService } from '../services/user-data.service';
 
 @Component({
@@ -18,13 +19,17 @@ export class ProfileComponent implements OnInit {
   homePost : any;
   tempUser : any ;
 
-  constructor(private userDataService:UserDataService,private http:HttpClient){}
+  constructor(private userDataService:UserDataService,private http:HttpClient,private router:Router){}
 
   ngOnInit(): void {
-    this.user = this.userDataService.userData;
-    this.currentPost = this.user.posts;
-    this.anotherCurrntPost = this.user.posts;
-    console.log(this.anotherCurrntPost)
+    if (this.userDataService.userData) {
+      this.user = this.userDataService.userData;
+      this.currentPost = this.user.posts;
+      this.anotherCurrntPost = this.user.posts;
+      console.log(this.anotherCurrntPost)
+    }else{
+      this.router.navigate(['/login'])
+    }
     //  --------------------------------------------------
     // console.log(this.currentPost.length);
     // console.log(this.user.id);

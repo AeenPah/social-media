@@ -13,17 +13,19 @@ import { UserDataService } from '../services/user-data.service';
 export class LoginComponent implements OnInit {
 
   formLogin !: FormGroup;
+  canDeactiveBool:boolean = true;
   
-
+  
   constructor (private formBuilder:FormBuilder,private http:HttpClient
     ,private router:Router,private userDataService:UserDataService){}
-  
-  ngOnInit(): void {
-    this.formLogin = this.formBuilder.group({
-      username : [''],
-      password : ['']
-    })
-  }
+    
+    ngOnInit(): void {
+      this.formLogin = this.formBuilder.group({
+        username : [''],
+        password : ['']
+      })
+      this.canDeactiveBool = true;
+    }
 
   submitLogin(){
     this.http.get<any>('http://localhost:3000/users').subscribe(res => {
@@ -34,12 +36,24 @@ export class LoginComponent implements OnInit {
       if (user) {
         alert("Right!!");
         this.userDataService.userData = user;
+        this.canDeactiveBool = false;
         this.router.navigate(['profile']);
       }else{
         alert("somthing Wrong!")
       }
       this.formLogin.reset();
     })
+  }
+  register(){
+    this.canDeactiveBool = false;
+    this.router.navigate(['/signup']);
+  }
+  canExit(){
+    if (this.canDeactiveBool) {
+      return false;
+    }else{
+      return true
+    }
   }
 
 

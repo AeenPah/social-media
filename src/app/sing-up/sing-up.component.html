@@ -25,7 +25,7 @@
         /><br />
         <input class="submit" type="submit" name="" id="" />
         <div class="text">Forgot password?</div>
-        <div class="text" [routerLink]="['/login']" class="changerLink">
+        <div class="text" (click)="toLogin()" class="changerLink">
           To Login page
         </div>
       </form>

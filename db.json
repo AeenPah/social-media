@@ -1,4 +1,33 @@
 {
-  "users": [],
-  "homePosts": []
+  "users": [
+    {
+      "fullName": "a",
+      "username": "a",
+      "email": "a",
+      "password": "a",
+      "posts": [
+        "",
+        "",
+        "1234",
+        "like me"
+      ],
+      "id": 1
+    }
+  ],
+  "homePosts": [
+    {
+      "userid": 1,
+      "userPost": "1234",
+      "postLikes": 2,
+      "postLikeBool": false,
+      "id": 1
+    },
+    {
+      "userid": 1,
+      "userPost": "like me",
+      "postLikes": 4,
+      "postLikeBool": false,
+      "id": 3
+    }
+  ]
 }

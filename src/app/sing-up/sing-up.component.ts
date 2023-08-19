@@ -13,6 +13,7 @@ export class SingUpComponent implements OnInit {
 
   formSignUP !: FormGroup;
   primaryPosts = ['',''];
+  canDeactiveBool:boolean = true;
 
   constructor (private formBuilder:FormBuilder,private http:HttpClient,private router:Router){}
 
@@ -33,6 +34,16 @@ export class SingUpComponent implements OnInit {
       this.formSignUP.reset();
       this.router.navigate(['/login']);
     })
-
+  }
+  toLogin(){
+    this.canDeactiveBool = false;
+    this.router.navigate(['/login']);
+  }
+  canExit(){
+    if (this.canDeactiveBool) {
+      return false;
+    }else{
+      return true
+    }
   }
 }
