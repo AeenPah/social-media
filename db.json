@@ -1,100 +1,74 @@
 {
   "users": [
     {
-      "fullName": "Jack Fashion",
+      "fullName": "Jack Bill",
       "username": "jack",
       "email": "jack@email.com",
       "password": "jack",
       "posts": [
         "",
         "",
-        "let's Start I'm jack",
-        "Here I share my stories with you guys!",
-        "I hate Cane  the little!",
-        "test"
+        "I'm jack"
       ],
       "id": 1
     },
     {
-      "fullName": "Jane Main",
-      "username": "jane",
-      "email": "jane@gmail.com",
-      "password": "jane",
+      "fullName": "a",
+      "username": "a",
+      "email": "a",
+      "password": "a",
       "posts": [
         "",
         "",
-        "I'm jane Follow me ",
-        "I'm new here",
-        "Like my posts"
+        "a",
+        "abcdefghijklmnopqrstuvwxyz",
+        "test1",
+        "test2",
+        "test3"
       ],
       "id": 2
-    },
-    {
-      "fullName": "Cane Sick",
-      "username": "cane",
-      "email": "cane@email.com",
-      "password": "cane",
-      "posts": [
-        "",
-        "",
-        "Here you can find cane!",
-        "Cane the great is here",
-        "Everyone! unfollow Jane quick."
-      ],
-      "id": 3
     }
   ],
   "homePosts": [
     {
       "userid": 1,
-      "userPost": "let's Start I'm jack",
+      "userPost": "I'm jack",
+      "postLikes": 8,
       "id": 1
     },
     {
-      "userid": 1,
-      "userPost": "Here I share my stories with you guys!",
+      "userid": 2,
+      "userPost": "a",
+      "postLikes": 17,
       "id": 2
     },
     {
       "userid": 2,
-      "userPost": "I'm jane Follow me ",
+      "userPost": "abcdefghijklmnopqrstuvwxyz",
+      "postLikes": 1,
+      "postLikeBool": false,
       "id": 3
     },
     {
       "userid": 2,
-      "userPost": "I'm new here",
+      "userPost": "test1",
+      "postLikes": 1,
+      "postLikeBool": false,
       "id": 4
     },
     {
       "userid": 2,
-      "userPost": "Like my posts",
+      "userPost": "test2",
+      "postLikes": 1,
+      "postLikeBool": false,
       "id": 5
     },
     {
-      "userid": 3,
-      "userPost": "Here you can find cane!",
+      "userid": 2,
+      "userPost": "test3",
+      "postLikes": 1,
+      "postLikeBool": false,
       "id": 6
-    },
-    {
-      "userid": 3,
-      "userPost": "Cane the great is here",
-      "id": 7
-    },
-    {
-      "userid": 3,
-      "userPost": "Everyone! unfollow Jane quick.",
-      "id": 8
-    },
-    {
-      "userid": 1,
-      "userPost": "I hate Cane  the little!",
-      "id": 9
-    },
-    {
-      "userid": 1,
-      "userPost": "test",
-      "postLikes": 0,
-      "id": 10
     }
   ]
 }

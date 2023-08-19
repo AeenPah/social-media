@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
 
   allPostsInf:any;
   allUsersInf:any;
+  likeBollean:boolean = true;
 
   constructor(private http:HttpClient){}
   
@@ -22,5 +23,16 @@ export class HomeComponent implements OnInit {
       this.allUsersInf = res;
       console.log(this.allUsersInf);
     })
+  }
+
+  likePost(item:any){
+    if (!item.postLikeBool) {
+      item.postLikes ++;
+      console.log(item)
+      this.http.put<any>('http://localhost:3000/homePosts/'+item.id,item).subscribe(res =>{
+        console.log(res)
+      });
+      item.postLikeBool = true;
+    }
   }
 }

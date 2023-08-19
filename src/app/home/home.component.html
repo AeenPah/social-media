@@ -3,8 +3,8 @@
     <div class="full-name">{{ allUsersInf[item.userid - 1].fullName }}</div>
     <div class="post">{{ item.userPost }}</div>
     <div class="post-reactions">
-      <div class="likes">number likes</div>
-      <button>Like</button>
+      <div class="likes">{{ item.postLikes }}</div>
+      <button (click)="likePost(item)">Like</button>
       <div class="likes">number comments</div>
       <button>Comment</button>
     </div>
