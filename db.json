@@ -48,7 +48,9 @@
       "password": "a",
       "posts": [
         "",
-        ""
+        "",
+        "123 test",
+        "test 32"
       ],
       "id": 4
     },
@@ -128,6 +130,20 @@
       "postLikes": 0,
       "postLikeBool": false,
       "id": 11
+    },
+    {
+      "userid": 4,
+      "userPost": "123 test",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 12
+    },
+    {
+      "userid": 4,
+      "userPost": "test 32",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 13
     }
   ]
 }
