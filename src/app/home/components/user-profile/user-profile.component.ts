@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { ApiService } from '../../../services/api.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class UserProfileComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private api: ApiService
+    private api: ApiService,
+    private authservice: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -26,5 +28,6 @@ export class UserProfileComponent implements OnInit {
         });
       });
     });
+    console.log(this.authservice.loggedIn);
   }
 }
