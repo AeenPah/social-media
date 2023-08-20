@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 import { UserDataService } from '../services/user-data.service';
 
 @Component({
@@ -15,9 +15,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient,
     private router: Router,
-    private userDataService: UserDataService
+    private userDataService: UserDataService,
+    private api: ApiService
   ) {}
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   submitLogin() {
-    this.http.get<any>('http://localhost:3000/users').subscribe((res) => {
+    this.api.getFromUsers().subscribe((res) => {
       const user = res.find((item: any) => {
         return (
           item.username === this.formLogin.value.username &&

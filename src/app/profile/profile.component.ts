@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 import { UserDataService } from '../services/user-data.service';
 
 @Component({
@@ -16,12 +16,12 @@ export class ProfileComponent implements OnInit {
   currentPost: string[] = [''];
   anotherCurrntPost: string[] = [''];
   homePost: any;
-  tempUser: any;
+  tempUserId: any;
 
   constructor(
     private userDataService: UserDataService,
-    private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private api: ApiService
   ) {}
 
   ngOnInit(): void {
@@ -41,11 +41,9 @@ export class ProfileComponent implements OnInit {
   postText() {
     this.currentPost.push(this.posttxt);
     this.user.posts = this.currentPost;
-    this.http
-      .put<any>('http://localhost:3000/users/' + this.user.id, this.user)
-      .subscribe((res) => {
-        // console.log(res)
-      });
+    this.api.putUserById(this.user.id, this.user).subscribe((res) => {
+      // console.log(res)
+    });
     //  --------------------------------------------------
     this.homePost = {
       userid: this.user.id,
@@ -54,9 +52,7 @@ export class ProfileComponent implements OnInit {
       postLikeBool: false,
     };
     console.log(this.homePost);
-    this.http
-      .post<any>('http://localhost:3000/homePosts', this.homePost)
-      .subscribe((res) => {});
+    this.api.postHomePosts(this.homePost).subscribe();
   }
   deleteText(a: number) {
     // ----
@@ -64,16 +60,14 @@ export class ProfileComponent implements OnInit {
     // console.log(this.currentPost[a]);
     this.currentPost.splice(a, 1);
     this.user.posts = this.currentPost;
-    this.http
-      .put<any>('http://localhost:3000/users/' + this.user.id, this.user)
-      .subscribe((res) => {
-        console.log(res);
-      });
+    this.api.putUserById(this.user.id, this.user).subscribe((res) => {
+      console.log(res);
+    });
   }
   deleteTextHome(a: number) {
-    this.http.get<any>('http://localhost:3000/homePosts').subscribe((res) => {
+    this.api.getFromHomePosts().subscribe((res) => {
       const homepost = res.find((item: any) => {
-        this.tempUser = item.id;
+        this.tempUserId = item.id;
         //  console.log(item.userPost);
         //  console.log(this.anotherCurrntPost[a]);
 
@@ -82,11 +76,9 @@ export class ProfileComponent implements OnInit {
       if (homepost) {
         console.log('we find it');
         // console.log(this.tempUser);
-        this.http
-          .delete('http://localhost:3000/homePosts/' + this.tempUser)
-          .subscribe((res) => {
-            // console.log(res)
-          });
+        this.api.deleteFromHomePosts(this.tempUserId).subscribe((res) => {
+          // console.log(res)
+        });
         this.deleteText(a);
       } else {
         console.log('We can not find the post in home!');

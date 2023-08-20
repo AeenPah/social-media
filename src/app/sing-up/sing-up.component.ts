@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-sing-up',
@@ -15,8 +15,8 @@ export class SingUpComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private api: ApiService
   ) {}
 
   ngOnInit(): void {
@@ -31,14 +31,12 @@ export class SingUpComponent implements OnInit {
 
   submitSignUp() {
     this.formSignUP.value.posts = this.primaryPosts;
-    this.http
-      .post('http://localhost:3000/users', this.formSignUP.value)
-      .subscribe((res) => {
-        console.log('http posted!!');
-        this.canDeactiveBool = false;
-        this.router.navigate(['/login']);
-        this.formSignUP.reset();
-      });
+    this.api.postUsers(this.formSignUP.value).subscribe((res) => {
+      console.log('http posted!!');
+      this.canDeactiveBool = false;
+      this.router.navigate(['/login']);
+      this.formSignUP.reset();
+    });
   }
   toLogin() {
     this.canDeactiveBool = false;
