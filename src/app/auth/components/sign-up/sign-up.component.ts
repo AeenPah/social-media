@@ -34,13 +34,13 @@ export class SignUpComponent {
     this.api.postUsers(this.formSignUP.value).subscribe((res) => {
       console.log('http posted!!');
       this.canDeactiveBool = false;
-      this.router.navigate(['/login']);
+      this.router.navigate(['/auth/login']);
       this.formSignUP.reset();
     });
   }
   toLogin() {
     this.canDeactiveBool = false;
-    this.router.navigate(['/login']);
+    this.router.navigate(['/auth/login']);
   }
   canExit() {
     if (this.canDeactiveBool) {

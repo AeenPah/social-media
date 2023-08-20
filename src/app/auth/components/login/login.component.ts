@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
   }
   register() {
     this.canDeactiveBool = false;
-    this.router.navigate(['/signup']);
+    this.router.navigate(['/auth/sign-up']);
   }
   canExit() {
     if (this.canDeactiveBool) {
