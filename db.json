@@ -48,9 +48,7 @@
       "password": "a",
       "posts": [
         "",
-        "",
-        "test from a",
-        "test from a number 2"
+        ""
       ],
       "id": 4
     },
@@ -123,20 +121,6 @@
       "postLikes": 1,
       "postLikeBool": false,
       "id": 8
-    },
-    {
-      "userid": 4,
-      "userPost": "test from a",
-      "postLikes": 1,
-      "postLikeBool": false,
-      "id": 9
-    },
-    {
-      "userid": 4,
-      "userPost": "test from a number 2",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 10
     },
     {
       "userid": 5,

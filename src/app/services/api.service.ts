@@ -26,6 +26,6 @@ export class ApiService {
     return this.http.put<any>('http://localhost:3000/homePosts/' + id, item);
   }
   deleteFromHomePosts(id: any) {
-    return this.http.get<any>('http://localhost:3000/homePosts');
+    return this.http.delete<any>('http://localhost:3000/homePosts/' + id);
   }
 }
