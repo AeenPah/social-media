@@ -1,50 +1,54 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder } from '@angular/forms'
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-sing-up',
   templateUrl: './sing-up.component.html',
-  styleUrls: ['./sing-up.component.css']
+  styleUrls: ['./sing-up.component.css'],
 })
 export class SingUpComponent implements OnInit {
+  formSignUP!: FormGroup;
+  primaryPosts = ['', ''];
+  canDeactiveBool: boolean = true;
 
-  formSignUP !: FormGroup;
-  primaryPosts = ['',''];
-  canDeactiveBool:boolean = true;
-
-  constructor (private formBuilder:FormBuilder,private http:HttpClient,private router:Router){}
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.formSignUP = this.formBuilder.group({
-      fullName : [''],
-      username : [''],
+      fullName: [''],
+      username: [''],
       email: [''],
-      password : [''],
-      posts:[''] 
-    })
+      password: [''],
+      posts: [''],
+    });
   }
 
-  submitSignUp(){
+  submitSignUp() {
     this.formSignUP.value.posts = this.primaryPosts;
-    this.http.post('http://localhost:3000/users',this.formSignUP.value).subscribe(res => {
-      console.log("http posted!!");
-      this.canDeactiveBool = false;
-      this.router.navigate(['/login']);
-      this.formSignUP.reset();
-    })
+    this.http
+      .post('http://localhost:3000/users', this.formSignUP.value)
+      .subscribe((res) => {
+        console.log('http posted!!');
+        this.canDeactiveBool = false;
+        this.router.navigate(['/login']);
+        this.formSignUP.reset();
+      });
   }
-  toLogin(){
+  toLogin() {
     this.canDeactiveBool = false;
     this.router.navigate(['/login']);
   }
-  canExit(){
+  canExit() {
     if (this.canDeactiveBool) {
       return false;
-    }else{
-      return true
+    } else {
+      return true;
     }
   }
 }

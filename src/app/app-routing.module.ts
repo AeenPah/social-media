@@ -8,17 +8,25 @@ import { SingUpComponent } from './sing-up/sing-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'home',component:HomeComponent},
-  {path:'login',canDeactivate:[CanDeactivateGaurdLoginService],component:LoginComponent},
-  {path:'signup',canDeactivate:[CanDeactivateGaurdLoginService],component:SingUpComponent},
-  {path:'profile',component:ProfileComponent},
-  {path:'user-profile',component:UserProfileComponent},
-  {path:'user-profile/:id',component:UserProfileComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'login',
+    canDeactivate: [CanDeactivateGaurdLoginService],
+    component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    canDeactivate: [CanDeactivateGaurdLoginService],
+    component: SingUpComponent,
+  },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'user-profile', component: UserProfileComponent },
+  { path: 'user-profile/:id', component: UserProfileComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

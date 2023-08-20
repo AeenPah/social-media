@@ -6,76 +6,91 @@ import { UserDataService } from '../services/user-data.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
+  user: any;
+  newuser: any;
+  postDate: Date = new Date();
+  posttxt!: string;
+  currentPost: string[] = [''];
+  anotherCurrntPost: string[] = [''];
+  homePost: any;
+  tempUser: any;
 
-  user: any ;
-  newuser: any ;
-  postDate: Date = new Date;
-  posttxt !:string;
-  currentPost : string[] = [''];
-  anotherCurrntPost : string[] = [''];
-  homePost : any;
-  tempUser : any ;
-
-  constructor(private userDataService:UserDataService,private http:HttpClient,private router:Router){}
+  constructor(
+    private userDataService: UserDataService,
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     if (this.userDataService.userData) {
       this.user = this.userDataService.userData;
       this.currentPost = this.user.posts;
       this.anotherCurrntPost = this.user.posts;
-      console.log(this.anotherCurrntPost)
-    }else{
-      this.router.navigate(['/login'])
+      console.log(this.anotherCurrntPost);
+    } else {
+      this.router.navigate(['/login']);
     }
     //  --------------------------------------------------
     // console.log(this.currentPost.length);
     // console.log(this.user.id);
   }
-  
-  postText(){
+
+  postText() {
     this.currentPost.push(this.posttxt);
     this.user.posts = this.currentPost;
-    this.http.put<any>('http://localhost:3000/users/'+this.user.id,this.user).subscribe(res =>{
-      // console.log(res)
-    });
+    this.http
+      .put<any>('http://localhost:3000/users/' + this.user.id, this.user)
+      .subscribe((res) => {
+        // console.log(res)
+      });
     //  --------------------------------------------------
-    this.homePost = {userid : this.user.id, userPost : this.posttxt, postLikes: 0 , postLikeBool:false };
+    this.homePost = {
+      userid: this.user.id,
+      userPost: this.posttxt,
+      postLikes: 0,
+      postLikeBool: false,
+    };
     console.log(this.homePost);
-    this.http.post<any>('http://localhost:3000/homePosts',this.homePost).subscribe(res => {
-    })
+    this.http
+      .post<any>('http://localhost:3000/homePosts', this.homePost)
+      .subscribe((res) => {});
   }
-  deleteText(a:number){
+  deleteText(a: number) {
     // ----
     // this.http.delete('http://localhost:3000/users/'+this.user.id).subscribe()
     // console.log(this.currentPost[a]);
-    this.currentPost.splice(a,1);
+    this.currentPost.splice(a, 1);
     this.user.posts = this.currentPost;
-    this.http.put<any>('http://localhost:3000/users/'+this.user.id,this.user).subscribe(res =>{
-      console.log(res)
-    });
+    this.http
+      .put<any>('http://localhost:3000/users/' + this.user.id, this.user)
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
-  deleteTextHome(a:number){
-    this.http.get<any>('http://localhost:3000/homePosts').subscribe(res => {
-      const homepost = res.find((item:any) => {
-         this.tempUser = item.id 
+  deleteTextHome(a: number) {
+    this.http.get<any>('http://localhost:3000/homePosts').subscribe((res) => {
+      const homepost = res.find((item: any) => {
+        this.tempUser = item.id;
         //  console.log(item.userPost);
         //  console.log(this.anotherCurrntPost[a]);
-         
-         return item.userPost == this.anotherCurrntPost[a]
+
+        return item.userPost == this.anotherCurrntPost[a];
       });
       if (homepost) {
         console.log('we find it');
         // console.log(this.tempUser);
-        this.http.delete('http://localhost:3000/homePosts/' + this.tempUser).subscribe(res => {
-          // console.log(res)
-        });
+        this.http
+          .delete('http://localhost:3000/homePosts/' + this.tempUser)
+          .subscribe((res) => {
+            // console.log(res)
+          });
         this.deleteText(a);
-      }else{
-        console.log('We can not find the post in home!')
+      } else {
+        console.log('We can not find the post in home!');
       }
-    })
+    });
   }
 }
