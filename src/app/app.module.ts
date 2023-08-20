@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
