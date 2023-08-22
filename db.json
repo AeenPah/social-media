@@ -24,7 +24,12 @@
         "",
         "",
         "milo is here guyss!",
-        "like my posts! now!"
+        "like my posts! now!",
+        "milo is here again",
+        "I like here",
+        "another post",
+        "like posting",
+        "dancing!"
       ],
       "id": 2
     },
@@ -40,31 +45,6 @@
         "Asghar likes here!"
       ],
       "id": 3
-    },
-    {
-      "fullName": "a",
-      "username": "a",
-      "email": "a",
-      "password": "a",
-      "posts": [
-        "",
-        "",
-        "123 test",
-        "test 32"
-      ],
-      "id": 4
-    },
-    {
-      "fullName": "lko",
-      "username": "lko",
-      "email": "lko",
-      "password": "lko",
-      "posts": [
-        "",
-        "",
-        "first post"
-      ],
-      "id": 5
     }
   ],
   "homePosts": [
@@ -85,14 +65,14 @@
     {
       "userid": 1,
       "userPost": "I'll post short story",
-      "postLikes": 3,
+      "postLikes": 0,
       "postLikeBool": false,
       "id": 3
     },
     {
       "userid": 1,
       "userPost": "<3 <3 babe.",
-      "postLikes": 5,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 4
     },
@@ -106,7 +86,7 @@
     {
       "userid": 2,
       "userPost": "like my posts! now!",
-      "postLikes": 4,
+      "postLikes": 3,
       "postLikeBool": false,
       "id": 6
     },
@@ -120,28 +100,42 @@
     {
       "userid": 3,
       "userPost": "Asghar likes here!",
-      "postLikes": 1,
+      "postLikes": 0,
       "postLikeBool": false,
       "id": 8
     },
     {
-      "userid": 5,
-      "userPost": "first post",
+      "userid": 2,
+      "userPost": "milo is here again",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 9
+    },
+    {
+      "userid": 2,
+      "userPost": "I like here",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 10
+    },
+    {
+      "userid": 2,
+      "userPost": "another post",
       "postLikes": 0,
       "postLikeBool": false,
       "id": 11
     },
     {
-      "userid": 4,
-      "userPost": "123 test",
+      "userid": 2,
+      "userPost": "like posting",
       "postLikes": 0,
       "postLikeBool": false,
       "id": 12
     },
     {
-      "userid": 4,
-      "userPost": "test 32",
-      "postLikes": 1,
+      "userid": 2,
+      "userPost": "dancing!",
+      "postLikes": 0,
       "postLikeBool": false,
       "id": 13
     }

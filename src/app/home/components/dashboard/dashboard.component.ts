@@ -14,10 +14,14 @@ export class DashboardComponent implements OnInit {
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    this.api.getFromHomePosts().subscribe((res) => {
+    let start = 0;
+    let end = 10;
+
+    this.api.getFromHomePostsIndash(start, end).subscribe((res) => {
       this.allPostsInf = res;
-      console.log(this.allPostsInf);
+      console.log(this.allPostsInf.length);
     });
+
     this.api.getFromUsers().subscribe((res) => {
       this.allUsersInf = res;
       console.log(this.allUsersInf);

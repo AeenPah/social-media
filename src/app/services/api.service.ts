@@ -16,8 +16,13 @@ export class ApiService {
   getFromUsers() {
     return this.http.get<any>('http://localhost:3000/users');
   }
+  getFromHomePostsIndash(start: any, end: any) {
+    return this.http.get<any>(
+      `http://localhost:3000/homePosts?_start=${start}&_end=${end}`
+    );
+  }
   getFromHomePosts() {
-    return this.http.get<any>('http://localhost:3000/homePosts');
+    return this.http.get<any>(`http://localhost:3000/homePosts`);
   }
   putUserById(userId: any, user: any) {
     return this.http.put<any>('http://localhost:3000/users/' + userId, user);
