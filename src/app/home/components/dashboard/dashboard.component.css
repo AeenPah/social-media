@@ -1,0 +1,19 @@
+.container {
+  margin: 0 auto;
+  width: 85%;
+  background-color: #f1eae6;
+  padding: 20px 35px;
+}
+
+.full-name {
+  margin: 10px 0 0 0;
+  font-size: 1.55em;
+}
+.post {
+  font-size: 1.3em;
+  margin: 10px 0 10px 10px;
+}
+
+.post-reaction {
+  font-size: 1em;
+}

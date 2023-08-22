@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         this.userDataService.userData = user;
         // this.canDeactiveBool = false;
         this.authService.login();
-        this.router.navigate(['profile']);
+        this.router.navigate(['/profile']);
       } else {
         alert('somthing Wrong!');
       }
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
   }
   register() {
     // this.canDeactiveBool = false;
-    this.router.navigate(['/auth/sign-up']);
+    this.router.navigate(['sign-up']);
   }
   // canExit() {
   //   if (this.canDeactiveBool) {

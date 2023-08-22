@@ -141,7 +141,7 @@
     {
       "userid": 4,
       "userPost": "test 32",
-      "postLikes": 0,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 13
     }

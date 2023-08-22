@@ -40,7 +40,7 @@ export class SignUpComponent {
   }
   toLogin() {
     this.canDeactiveBool = false;
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/login']);
   }
   canExit() {
     if (this.canDeactiveBool) {
