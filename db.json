@@ -31,7 +31,8 @@
         "I like here",
         "another post",
         "like posting",
-        "dancing!"
+        "dancing!",
+        "am I in page 4"
       ],
       "id": 2
     },
@@ -154,6 +155,13 @@
       "postLikes": 1,
       "postLikeBool": false,
       "id": 16
+    },
+    {
+      "userid": 2,
+      "userPost": "am I in page 4",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 17
     }
   ]
 }

@@ -1,0 +1,26 @@
+.page-controller {
+  margin: 10px auto;
+  height: 80px;
+  background-color: #c2f4e7;
+  border-radius: 8px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-controller > * {
+  margin: 0 20px;
+}
+.page-controller .page-numbers {
+  font-size: 1.4em;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+.page-controller .page-numbers:hover {
+  background-color: #b8dfd5;
+}
+.page-controller button {
+  height: 50px;
+}
