@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="posts" *ngFor="let item of allPostsInf.reverse(); let i = index">
+  <div class="posts" *ngFor="let item of allPostsInf; let i = index">
     <div class="full-name" [routerLink]="['/user-profile/' + item.userid]">
       {{ allUsersInf[item.userid - 1].fullName }}
     </div>
@@ -12,5 +12,9 @@
       <button>Comment</button>
     </div>
     <hr />
+  </div>
+  <div class="page-controller">
+    <button (click)="toNextPage()">click to next</button>
+    <button (click)="toPrevPage()">click to Prev</button>
   </div>
 </div>

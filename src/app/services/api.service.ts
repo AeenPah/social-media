@@ -16,9 +16,9 @@ export class ApiService {
   getFromUsers() {
     return this.http.get<any>('http://localhost:3000/users');
   }
-  getFromHomePostsIndash(start: any, end: any) {
+  getFromHomePostsIndash(page: number, limit: number) {
     return this.http.get<any>(
-      `http://localhost:3000/homePosts?_start=${start}&_end=${end}`
+      `http://localhost:3000/homePosts?_page=${page}&_limit=${limit}`
     );
   }
   getFromHomePosts() {

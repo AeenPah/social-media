@@ -11,7 +11,10 @@
         "I'm Jack here",
         "Follow jack the great ",
         "I'll post short story",
-        "<3 <3 babe."
+        "<3 <3 babe.",
+        "New Version of Jack is here!",
+        "check for page 4",
+        "another page 4 test"
       ],
       "id": 1
     },
@@ -114,7 +117,7 @@
     {
       "userid": 2,
       "userPost": "I like here",
-      "postLikes": 0,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 10
     },
@@ -138,6 +141,27 @@
       "postLikes": 0,
       "postLikeBool": false,
       "id": 13
+    },
+    {
+      "userid": 1,
+      "userPost": "New Version of Jack is here!",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 14
+    },
+    {
+      "userid": 1,
+      "userPost": "check for page 4",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 15
+    },
+    {
+      "userid": 1,
+      "userPost": "another page 4 test",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 16
     }
   ]
 }
