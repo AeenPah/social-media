@@ -79,6 +79,8 @@ export class DashboardComponent implements OnInit {
     }
   }
   goToPage(page: number) {
+    this.counter = page;
+
     this.allPostsInf = this.postsByPages[page];
   }
 }
