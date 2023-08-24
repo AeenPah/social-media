@@ -27,7 +27,6 @@
         "",
         "",
         "milo is here guyss!",
-        "like my posts! now!",
         "milo is here again",
         "I like here",
         "another post",
@@ -85,13 +84,6 @@
       "postLikes": 0,
       "postLikeBool": false,
       "id": 5
-    },
-    {
-      "userid": 2,
-      "userPost": "like my posts! now!",
-      "postLikes": 3,
-      "postLikeBool": false,
-      "id": 6
     },
     {
       "userid": 3,
