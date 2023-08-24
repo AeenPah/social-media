@@ -15,6 +15,9 @@
   </div>
   <div class="page-controller">
     <button (click)="toNextPage()">click to next</button>
+    <div *ngFor="let page of pagesNumber">
+      <div (click)="goToPage(page - 1)">{{ page }}</div>
+    </div>
     <button (click)="toPrevPage()">click to Prev</button>
   </div>
 </div>

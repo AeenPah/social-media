@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   postsByPages = [];
   counter = 0;
   loopCount: number;
+  pagesNumber: number[];
 
   constructor(private api: ApiService, private destryRef: DestroyRef) {}
 
@@ -25,6 +26,7 @@ export class DashboardComponent implements OnInit {
     this.getPosts();
     this.getUsers();
   }
+
   likePost(item: any) {
     if (!item.postLikeBool) {
       item.postLikes++;
@@ -35,7 +37,6 @@ export class DashboardComponent implements OnInit {
       item.postLikeBool = true;
     }
   }
-
   getPosts() {
     this.api.getFromHomePosts().subscribe((res) => {
       this.testPostLenght = res.length;
@@ -45,14 +46,16 @@ export class DashboardComponent implements OnInit {
         this.api.getFromHomePostsIndash(index + 1, 5).subscribe((r) => {
           this.postsInLoop = r;
           this.postsByPages.push([...this.postsInLoop]);
-          // console.log(this.testone);
           this.loopCount = index;
-          this.allPostsInf = this.postsByPages[0];
+          this.counter = this.loopCount;
+          this.allPostsInf = this.postsByPages[this.loopCount];
+          this.pagesNumber = Array(this.loopCount + 1)
+            .fill(0)
+            .map((x, i) => i + 1);
         });
       }
     });
   }
-
   getUsers() {
     this.api
       .getFromUsers()
@@ -62,6 +65,7 @@ export class DashboardComponent implements OnInit {
         console.log(this.allUsersInf);
       });
   }
+  // for page controller...
   toNextPage() {
     if (this.counter < this.loopCount) {
       this.counter++;
@@ -73,5 +77,8 @@ export class DashboardComponent implements OnInit {
       this.counter--;
       this.allPostsInf = this.postsByPages[this.counter];
     }
+  }
+  goToPage(page: number) {
+    this.allPostsInf = this.postsByPages[page];
   }
 }

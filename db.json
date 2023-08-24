@@ -159,7 +159,7 @@
     {
       "userid": 1,
       "userPost": "another page 4 test",
-      "postLikes": 0,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 16
     }
