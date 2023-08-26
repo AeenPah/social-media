@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-page-controler',
@@ -16,6 +16,7 @@ export class PageControlerComponent {
     if (this.counter < this.loopCount) {
       this.counter++;
       this.allPostsInf = this.postsByPages[this.counter];
+      this.sendPosts(this.allPostsInf);
     }
   }
   public toPrevPage() {
@@ -23,10 +24,18 @@ export class PageControlerComponent {
       this.counter--;
       this.allPostsInf = this.postsByPages[this.counter];
       console.log(this.allPostsInf);
+      this.sendPosts(this.allPostsInf);
     }
   }
   public goToPage(page: number) {
     this.counter = page;
     this.allPostsInf = this.postsByPages[page];
+    this.sendPosts(this.allPostsInf);
+  }
+
+  @Output() postsEmit = new EventEmitter<any>();
+
+  sendPosts(posts: any) {
+    this.postsEmit.emit(posts);
   }
 }

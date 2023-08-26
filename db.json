@@ -14,7 +14,10 @@
         "<3 <3 babe.",
         "New Version of Jack is here!",
         "check for page 4",
-        "another page 4 test"
+        "another page 4 test",
+        "I'm jack here Hello!",
+        "How R U guys?!",
+        "Talk to me"
       ],
       "id": 1
     },
@@ -32,7 +35,8 @@
         "another post",
         "like posting",
         "dancing!",
-        "am I in page 4"
+        "am I in page 4",
+        "Jack pls shut up!"
       ],
       "id": 2
     },
@@ -162,6 +166,34 @@
       "postLikes": 0,
       "postLikeBool": false,
       "id": 17
+    },
+    {
+      "userid": 1,
+      "userPost": "I'm jack here Hello!",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 18
+    },
+    {
+      "userid": 1,
+      "userPost": "How R U guys?!",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 19
+    },
+    {
+      "userid": 1,
+      "userPost": "Talk to me",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 20
+    },
+    {
+      "userid": 2,
+      "userPost": "Jack pls shut up!",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 21
     }
   ]
 }

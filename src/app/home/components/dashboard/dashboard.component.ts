@@ -82,4 +82,8 @@ export class DashboardComponent implements OnInit {
     this.counter = page;
     this.allPostsInf = this.postsByPages[page];
   }
+
+  receiveFromChild(posts: any) {
+    this.allPostsInf = posts;
+  }
 }

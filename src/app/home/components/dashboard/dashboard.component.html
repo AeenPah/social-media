@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="posts" *ngFor="let item of allPostsInf; let i = index">
+  <div class="posts" *ngFor="let item of allPostsInf.reverse(); let i = index">
     <div class="full-name" [routerLink]="['/user-profile/' + item.userid]">
       {{ allUsersInf[item.userid - 1].fullName }}
     </div>
@@ -20,12 +20,13 @@
     [allPostsInf]="allPostsInf"
     [postsByPages]="postsByPages"
     [pagesNumber]="pagesNumber"
+    (postsEmit)="receiveFromChild($event)"
   ></app-page-controler>
-  <div class="page-controller">
+  <!-- <div class="page-controller">
     <button (click)="toNextPage()">click to next</button>
     <div *ngFor="let page of pagesNumber">
       <div (click)="goToPage(page - 1)" class="page-numbers">{{ page }}</div>
     </div>
     <button (click)="toPrevPage()">click to Prev</button>
-  </div>
+  </div> -->
 </div>
