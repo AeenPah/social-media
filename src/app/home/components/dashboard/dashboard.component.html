@@ -7,6 +7,7 @@
     <div class="post-reactions">
       <div class="likes">{{ item.postLikes }}</div>
       <button (click)="likePost(item)">Like</button>
+      <!-- comment section -->
       <div class="likes">number comments</div>
       <button (click)="showCommentBox(item)">Comment</button>
       <div class="comment-box" *ngIf="item.commentBoxBool">
@@ -15,6 +16,11 @@
         >
           Post
         </button>
+        <div *ngFor="let comment of item.comments">
+          <div *ngIf="comment.by">
+            <div>{{ comment.by }} ) {{ comment.comment }}</div>
+          </div>
+        </div>
       </div>
     </div>
     <hr />

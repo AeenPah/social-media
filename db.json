@@ -60,8 +60,7 @@
       "password": "a",
       "posts": [
         "",
-        "",
-        "hi im test"
+        ""
       ],
       "commentBoxBool": "",
       "comments": [
@@ -77,8 +76,7 @@
       "password": "q",
       "posts": [
         "",
-        "",
-        "q"
+        ""
       ],
       "commentBoxBool": "",
       "comments": [
@@ -136,7 +134,17 @@
       "userPost": "Asghar likes here!",
       "postLikes": 0,
       "postLikeBool": false,
-      "id": 8
+      "id": 8,
+      "commentBoxBool": false,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "I'm Jack here",
+          "by": "Jack Smith"
+        }
+      ]
     },
     {
       "userid": 2,
@@ -220,46 +228,36 @@
       "userPost": "Talk to me",
       "postLikes": 3,
       "postLikeBool": false,
-      "id": 20
-    },
-    {
-      "userid": 2,
-      "userPost": "Jack pls shut up!",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 21
-    },
-    {
-      "userid": 4,
-      "userPost": "hi im test",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 22,
+      "id": 20,
       "commentBoxBool": false,
       "comments": [
         {
           "user": ""
         },
         {
-          "comment": "from Q",
-          "by": "q"
+          "comment": "no one talks?",
+          "by": "Jack Smith"
         }
       ]
     },
     {
-      "userid": 5,
-      "userPost": "q",
+      "userid": 2,
+      "userPost": "Jack pls shut up!",
       "postLikes": 0,
       "postLikeBool": false,
-      "id": 23,
-      "commentBoxBool": true,
+      "id": 21,
+      "commentBoxBool": false,
       "comments": [
         {
           "user": ""
         },
         {
-          "comment": "first comment",
-          "by": "a"
+          "comment": "hi",
+          "by": "Jack Smith"
+        },
+        {
+          "comment": "no",
+          "by": "Jack Smith"
         }
       ]
     }

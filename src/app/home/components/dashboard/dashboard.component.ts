@@ -47,6 +47,8 @@ export class DashboardComponent implements OnInit {
   }
 
   showCommentBox(item: any) {
+    console.log(item);
+
     item.commentBoxBool = !item.commentBoxBool;
   }
   postComment(comment: string, item: any) {
