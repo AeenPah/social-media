@@ -79,7 +79,7 @@
     {
       "userid": 1,
       "userPost": "<3 <3 babe.",
-      "postLikes": 1,
+      "postLikes": 2,
       "postLikeBool": false,
       "id": 4
     },
@@ -170,7 +170,7 @@
     {
       "userid": 1,
       "userPost": "I'm jack here Hello!",
-      "postLikes": 0,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 18
     },
