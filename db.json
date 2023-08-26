@@ -243,21 +243,21 @@
     {
       "userid": 2,
       "userPost": "Jack pls shut up!",
-      "postLikes": 0,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 21,
-      "commentBoxBool": false,
+      "commentBoxBool": true,
       "comments": [
         {
           "user": ""
         },
         {
-          "comment": "hi",
-          "by": "Jack Smith"
+          "comment": "another test",
+          "by": "Milo Best"
         },
         {
-          "comment": "no",
-          "by": "Jack Smith"
+          "comment": "milo test",
+          "by": "Milo Best"
         }
       ]
     }

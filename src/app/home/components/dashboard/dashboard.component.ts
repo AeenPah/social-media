@@ -52,11 +52,11 @@ export class DashboardComponent implements OnInit {
     item.commentBoxBool = !item.commentBoxBool;
   }
   postComment(comment: string, item: any) {
+    this.comments = item.comments;
     this.comments.push({
       comment: comment,
       by: this.userDataService.userData.fullName,
     });
-    item.comments = this.comments;
     console.log(item);
     item.commentBoxBool = !item.commentBoxBool;
     this.api.putHomePosts(item.id, item).subscribe();
