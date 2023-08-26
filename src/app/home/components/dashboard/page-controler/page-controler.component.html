@@ -1,6 +1,7 @@
 <p>page-controler works!</p>
 
 <div class="page-controller">
+  <div>Page: {{ counter + 1 }}</div>
   <button (click)="toNextPage()">click to next</button>
   <div *ngFor="let page of pagesNumber">
     <div (click)="goToPage(page - 1)" class="page-numbers">{{ page }}</div>

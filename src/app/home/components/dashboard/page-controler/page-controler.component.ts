@@ -6,11 +6,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./page-controler.component.css'],
 })
 export class PageControlerComponent {
-  @Input() counter;
-  @Input() loopCount;
+  @Input() counter: number;
+  @Input() loopCount: number;
   @Input() allPostsInf;
   @Input() postsByPages;
   @Input() pagesNumber;
+  @Output() postsEmit = new EventEmitter<any>();
 
   public toNextPage() {
     if (this.counter < this.loopCount) {
@@ -32,9 +33,6 @@ export class PageControlerComponent {
     this.allPostsInf = this.postsByPages[page];
     this.sendPosts(this.allPostsInf);
   }
-
-  @Output() postsEmit = new EventEmitter<any>();
-
   sendPosts(posts: any) {
     this.postsEmit.emit(posts);
   }

@@ -65,25 +65,24 @@ export class DashboardComponent implements OnInit {
         console.log(this.allUsersInf);
       });
   }
-  // for page controller...
-  toNextPage() {
-    if (this.counter < this.loopCount) {
-      this.counter++;
-      this.allPostsInf = this.postsByPages[this.counter];
-    }
-  }
-  toPrevPage() {
-    if (this.counter > 0) {
-      this.counter--;
-      this.allPostsInf = this.postsByPages[this.counter];
-    }
-  }
-  goToPage(page: number) {
-    this.counter = page;
-    this.allPostsInf = this.postsByPages[page];
-  }
-
+  // // for page controller...
   receiveFromChild(posts: any) {
     this.allPostsInf = posts;
   }
+  // toNextPage() {
+  //   if (this.counter < this.loopCount) {
+  //     this.counter++;
+  //     this.allPostsInf = this.postsByPages[this.counter];
+  //   }
+  // }
+  // toPrevPage() {
+  //   if (this.counter > 0) {
+  //     this.counter--;
+  //     this.allPostsInf = this.postsByPages[this.counter];
+  //   }
+  // }
+  // goToPage(page: number) {
+  //   this.counter = page;
+  //   this.allPostsInf = this.postsByPages[page];
+  // }
 }
