@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private api: ApiService,
-    private destryRef: DestroyRef,
+    private destroyRef: DestroyRef,
     private userDataService: UserDataService
   ) {}
 
@@ -39,9 +39,12 @@ export class DashboardComponent implements OnInit {
     if (!item.postLikeBool) {
       console.log(item);
       item.postLikes++;
-      this.api.putHomePosts(item.id, item).subscribe((res) => {
-        console.log(res);
-      });
+      this.api
+        .putHomePosts(item.id, item)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe((res) => {
+          console.log(res);
+        });
       item.postLikeBool = true;
     }
   }
@@ -59,32 +62,38 @@ export class DashboardComponent implements OnInit {
     });
     console.log(item);
     item.commentBoxBool = !item.commentBoxBool;
-    this.api.putHomePosts(item.id, item).subscribe();
+    this.api
+      .putHomePosts(item.id, item)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe();
   }
 
   getPosts() {
-    this.api.getFromHomePosts().subscribe((res) => {
-      this.testPostLenght = res.length;
-      console.log(res.commentBoxBool);
+    this.api
+      .getFromHomePosts()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((res) => {
+        this.testPostLenght = res.length;
+        console.log(res.commentBoxBool);
 
-      for (let index = 0; index < this.testPostLenght / 5; index++) {
-        this.api.getFromHomePostsIndash(index + 1, 5).subscribe((r) => {
-          this.postsInLoop = r;
-          this.postsByPages.push([...this.postsInLoop]);
-          this.loopCount = index;
-          this.counter = this.loopCount;
-          this.allPostsInf = this.postsByPages[this.loopCount];
-          this.pagesNumber = Array(this.loopCount + 1)
-            .fill(0)
-            .map((x, i) => i + 1);
-        });
-      }
-    });
+        for (let index = 0; index < this.testPostLenght / 5; index++) {
+          this.api.getFromHomePostsIndash(index + 1, 5).subscribe((r) => {
+            this.postsInLoop = r;
+            this.postsByPages.push([...this.postsInLoop]);
+            this.loopCount = index;
+            this.counter = this.loopCount;
+            this.allPostsInf = this.postsByPages[this.loopCount];
+            this.pagesNumber = Array(this.loopCount + 1)
+              .fill(0)
+              .map((x, i) => i + 1);
+          });
+        }
+      });
   }
   getUsers() {
     this.api
       .getFromUsers()
-      .pipe(takeUntilDestroyed(this.destryRef))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((res) => {
         this.allUsersInf = res;
         console.log(this.allUsersInf);

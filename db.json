@@ -226,7 +226,7 @@
     {
       "userid": 1,
       "userPost": "Talk to me",
-      "postLikes": 3,
+      "postLikes": 4,
       "postLikeBool": false,
       "id": 20,
       "commentBoxBool": false,
@@ -246,7 +246,7 @@
       "postLikes": 1,
       "postLikeBool": false,
       "id": 21,
-      "commentBoxBool": true,
+      "commentBoxBool": false,
       "comments": [
         {
           "user": ""
@@ -257,6 +257,10 @@
         },
         {
           "comment": "milo test",
+          "by": "Milo Best"
+        },
+        {
+          "comment": "hi",
           "by": "Milo Best"
         }
       ]

@@ -8,7 +8,6 @@
       <div class="likes">{{ item.postLikes }}</div>
       <button (click)="likePost(item)">Like</button>
       <!-- comment section -->
-      <div class="likes">number comments</div>
       <button (click)="showCommentBox(item)">Comment</button>
       <div class="comment-box" *ngIf="item.commentBoxBool">
         Post Comment : <input type="text" #commentInput /><button
