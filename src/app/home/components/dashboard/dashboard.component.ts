@@ -1,6 +1,7 @@
 import { Component, DestroyRef, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,28 +20,50 @@ export class DashboardComponent implements OnInit {
   counter = 0;
   loopCount: number;
   pagesNumber: number[];
+  comments: any = [{ user: '' }];
+  test: any;
 
-  constructor(private api: ApiService, private destryRef: DestroyRef) {}
+  constructor(
+    private api: ApiService,
+    private destryRef: DestroyRef,
+    private userDataService: UserDataService
+  ) {}
 
   ngOnInit(): void {
     this.getPosts();
     this.getUsers();
+    console.log(this.userDataService.userData.fullName);
   }
 
   likePost(item: any) {
     if (!item.postLikeBool) {
-      item.postLikes++;
       console.log(item);
+      item.postLikes++;
       this.api.putHomePosts(item.id, item).subscribe((res) => {
         console.log(res);
       });
       item.postLikeBool = true;
     }
   }
+
+  showCommentBox(item: any) {
+    item.commentBoxBool = !item.commentBoxBool;
+  }
+  postComment(comment: string, item: any) {
+    this.comments.push({
+      comment: comment,
+      by: this.userDataService.userData.fullName,
+    });
+    item.comments = this.comments;
+    console.log(item);
+    item.commentBoxBool = !item.commentBoxBool;
+    this.api.putHomePosts(item.id, item).subscribe();
+  }
+
   getPosts() {
     this.api.getFromHomePosts().subscribe((res) => {
       this.testPostLenght = res.length;
-      console.log(res.length);
+      console.log(res.commentBoxBool);
 
       for (let index = 0; index < this.testPostLenght / 5; index++) {
         this.api.getFromHomePostsIndash(index + 1, 5).subscribe((r) => {

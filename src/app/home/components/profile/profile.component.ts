@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
       this.user = this.userDataService.userData;
       this.currentPost = this.user.posts;
       this.anotherCurrntPost = this.user.posts;
-      console.log(this.anotherCurrntPost);
+      console.log(this.user);
     } else {
       this.router.navigate(['/login']);
     }
@@ -51,7 +51,7 @@ export class ProfileComponent implements OnInit {
       postLikes: 0,
       postLikeBool: false,
     };
-    console.log(this.homePost);
+    // console.log(this.homePost);
     this.api.postHomePosts(this.homePost).subscribe();
   }
   deleteText(a: number) {
@@ -61,7 +61,7 @@ export class ProfileComponent implements OnInit {
     this.currentPost.splice(a, 1);
     this.user.posts = this.currentPost;
     this.api.putUserById(this.user.id, this.user).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
     });
   }
   deleteTextHome(a: number) {

@@ -11,7 +11,6 @@ import { ApiService } from 'src/app/services/api.service';
 export class SignUpComponent {
   formSignUP!: FormGroup;
   primaryPosts = ['', ''];
-  canDeactiveBool: boolean = true;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,27 +25,21 @@ export class SignUpComponent {
       email: [''],
       password: [''],
       posts: [''],
+      commentBoxBool: [''],
+      comments: [''],
     });
   }
 
   submitSignUp() {
     this.formSignUP.value.posts = this.primaryPosts;
-    this.api.postUsers(this.formSignUP.value).subscribe((res) => {
+    this.formSignUP.value.comments = this.primaryPosts;
+    this.api.postUsers(this.formSignUP.value).subscribe(() => {
       console.log('http posted!!');
-      this.canDeactiveBool = false;
       this.router.navigate(['/auth/login']);
       this.formSignUP.reset();
     });
   }
   toLogin() {
-    this.canDeactiveBool = false;
     this.router.navigate(['/login']);
-  }
-  canExit() {
-    if (this.canDeactiveBool) {
-      return false;
-    } else {
-      return true;
-    }
   }
 }

@@ -52,6 +52,40 @@
         "Asghar likes here!"
       ],
       "id": 3
+    },
+    {
+      "fullName": "a",
+      "username": "a",
+      "email": "a",
+      "password": "a",
+      "posts": [
+        "",
+        "",
+        "hi im test"
+      ],
+      "commentBoxBool": "",
+      "comments": [
+        "",
+        ""
+      ],
+      "id": 4
+    },
+    {
+      "fullName": "q",
+      "username": "q",
+      "email": "q",
+      "password": "q",
+      "posts": [
+        "",
+        "",
+        "q"
+      ],
+      "commentBoxBool": "",
+      "comments": [
+        "",
+        ""
+      ],
+      "id": 5
     }
   ],
   "homePosts": [
@@ -184,7 +218,7 @@
     {
       "userid": 1,
       "userPost": "Talk to me",
-      "postLikes": 1,
+      "postLikes": 3,
       "postLikeBool": false,
       "id": 20
     },
@@ -194,6 +228,40 @@
       "postLikes": 0,
       "postLikeBool": false,
       "id": 21
+    },
+    {
+      "userid": 4,
+      "userPost": "hi im test",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 22,
+      "commentBoxBool": false,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "from Q",
+          "by": "q"
+        }
+      ]
+    },
+    {
+      "userid": 5,
+      "userPost": "q",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 23,
+      "commentBoxBool": true,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "first comment",
+          "by": "a"
+        }
+      ]
     }
   ]
 }
