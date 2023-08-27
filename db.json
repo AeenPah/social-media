@@ -24,8 +24,10 @@
         "",
         "",
         "milo is here guyss!",
-        "hi again !!",
-        "milo the Best is here"
+        "milo the Best is here",
+        "sky",
+        "test from milo",
+        "im milo"
       ],
       "id": 2
     },
@@ -133,13 +135,6 @@
     },
     {
       "userid": 2,
-      "userPost": "hi again !!",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 9
-    },
-    {
-      "userid": 2,
       "userPost": "milo the Best is here",
       "postLikes": 1,
       "postLikeBool": true,
@@ -158,6 +153,27 @@
           "by": "Milo Best"
         }
       ]
+    },
+    {
+      "userid": 2,
+      "userPost": "sky",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 11
+    },
+    {
+      "userid": 2,
+      "userPost": "test from milo",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 12
+    },
+    {
+      "userid": 2,
+      "userPost": "im milo",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 14
     }
   ]
 }

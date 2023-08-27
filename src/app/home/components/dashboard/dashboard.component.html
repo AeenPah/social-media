@@ -25,19 +25,20 @@
     <hr />
     <!-- page-controler -->
   </div>
-  <app-page-controler
+  <!-- <app-page-controler
     [counter]="counter"
     [loopCount]="loopCount"
     [allPostsInf]="allPostsInf"
     [postsByPages]="postsByPages"
     [pagesNumber]="pagesNumber"
     (postsEmit)="receiveFromChild($event)"
-  ></app-page-controler>
-  <!-- <div class="page-controller">
-    <button (click)="toNextPage()">click to next</button>
-    <div *ngFor="let page of pagesNumber">
-      <div (click)="goToPage(page - 1)" class="page-numbers">{{ page }}</div>
-    </div>
+  ></app-page-controler> -->
+  <div class="page-controller">
+    <div>Page: {{ newCounter }}</div>
     <button (click)="toPrevPage()">click to Prev</button>
-  </div> -->
+    <div *ngFor="let page of postNumbersArr">
+      <div (click)="goToPage(page)" class="page-numbers">{{ page }}</div>
+    </div>
+    <button (click)="toNextPage()">click to next</button>
+  </div>
 </div>

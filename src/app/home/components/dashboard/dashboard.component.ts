@@ -1,6 +1,13 @@
-import { Component, DestroyRef, OnInit } from '@angular/core';
+import {
+  Component,
+  DestroyRef,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { fromEvent, map } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,15 +27,19 @@ export class DashboardComponent implements OnInit {
   loopCount: number;
   pagesNumber: number[];
   comments: any = [{ user: '' }];
-  test: any;
   onlineUser: any;
+  // new vars
+  newCounter: number = 1;
+  postNumbers: number;
+  postNumbersArr: number[];
 
   constructor(private api: ApiService, private destroyRef: DestroyRef) {}
 
   ngOnInit(): void {
     this.getOnlineUser(localStorage.getItem('UserId'));
-    this.getPosts();
+    this.getAllPosts();
     this.getUsers();
+    this.getPosts();
   }
 
   likePost(item: any) {
@@ -68,26 +79,24 @@ export class DashboardComponent implements OnInit {
     this.comments = [{ user: '' }];
   }
 
-  getPosts() {
+  getAllPosts() {
     this.api
       .getFromHomePosts()
-      .pipe(takeUntilDestroyed(this.destroyRef))
+      .pipe()
       .subscribe((res) => {
-        this.testPostLenght = res.length;
-        console.log(res.commentBoxBool);
-
-        for (let index = 0; index < this.testPostLenght / 5; index++) {
-          this.api.getFromHomePostsIndash(index + 1, 5).subscribe((r) => {
-            this.postsInLoop = r;
-            this.postsByPages.push([...this.postsInLoop]);
-            this.loopCount = index;
-            this.counter = this.loopCount;
-            this.allPostsInf = this.postsByPages[this.loopCount];
-            this.pagesNumber = Array(this.loopCount + 1)
-              .fill(0)
-              .map((x, i) => i + 1);
-          });
-        }
+        this.postNumbers = res.length;
+        this.postNumbers = Math.ceil(this.postNumbers / 5);
+        this.postNumbersArr = Array(this.postNumbers)
+          .fill(0)
+          .map((x, i) => i + 1);
+      });
+  }
+  getPosts() {
+    this.api
+      .getFromHomePostsIndash(this.newCounter, 5)
+      .pipe()
+      .subscribe((res) => {
+        this.allPostsInf = res;
       });
   }
   getUsers() {
@@ -105,7 +114,23 @@ export class DashboardComponent implements OnInit {
     });
   }
   // // for page controller...
-  receiveFromChild(posts: any) {
-    this.allPostsInf = posts;
+  // receiveFromChild(posts: any) {
+  //   this.allPostsInf = posts;
+  // }
+  toNextPage() {
+    if (this.newCounter <= this.postNumbers) {
+      this.newCounter++;
+      this.getPosts();
+    }
+  }
+  goToPage(page: number) {
+    this.newCounter = page;
+    this.getPosts();
+  }
+  toPrevPage() {
+    if (this.newCounter > 1) {
+      this.newCounter--;
+      this.getPosts();
+    }
   }
 }
