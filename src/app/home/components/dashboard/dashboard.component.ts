@@ -1,13 +1,6 @@
-import {
-  Component,
-  DestroyRef,
-  ElementRef,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, DestroyRef, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { fromEvent, map } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,15 +10,6 @@ import { fromEvent, map } from 'rxjs';
 export class DashboardComponent implements OnInit {
   allPostsInf: any;
   allUsersInf: any;
-  likeBollean: boolean = true;
-  page: number = 1;
-  limit: number = 5;
-  testPostLenght: number;
-  postsInLoop: any;
-  postsByPages = [];
-  counter = 0;
-  loopCount: number;
-  pagesNumber: number[];
   comments: any = [{ user: '' }];
   onlineUser: any;
   // new vars
