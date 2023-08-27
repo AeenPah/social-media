@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
   pagesNumber: number[];
   comments: any = [{ user: '' }];
   test: any;
+  onlineUser: any;
 
   constructor(
     private api: ApiService,
@@ -30,9 +31,9 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getOnlineUser(localStorage.getItem('UserId'));
     this.getPosts();
     this.getUsers();
-    console.log(this.userDataService.userData.fullName);
   }
 
   likePost(item: any) {
@@ -55,17 +56,21 @@ export class DashboardComponent implements OnInit {
     item.commentBoxBool = !item.commentBoxBool;
   }
   postComment(comment: string, item: any) {
-    this.comments = item.comments;
+    if (item.comments) {
+      this.comments = item.comments;
+    }
     this.comments.push({
       comment: comment,
-      by: this.userDataService.userData.fullName,
+      by: this.onlineUser.fullName,
     });
+    item.comments = this.comments;
     console.log(item);
     item.commentBoxBool = !item.commentBoxBool;
     this.api
       .putHomePosts(item.id, item)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe();
+    this.comments = [{ user: '' }];
   }
 
   getPosts() {
@@ -98,6 +103,11 @@ export class DashboardComponent implements OnInit {
         this.allUsersInf = res;
         console.log(this.allUsersInf);
       });
+  }
+  getOnlineUser(id: string) {
+    this.api.getFromUsersById(id).subscribe((res) => {
+      this.onlineUser = res;
+    });
   }
   // // for page controller...
   receiveFromChild(posts: any) {

@@ -11,13 +11,7 @@
         "I'm Jack here",
         "Follow jack the great ",
         "I'll post short story",
-        "<3 <3 babe.",
-        "New Version of Jack is here!",
-        "check for page 4",
-        "another page 4 test",
-        "I'm jack here Hello!",
-        "How R U guys?!",
-        "Talk to me"
+        "<3 <3 babe."
       ],
       "id": 1
     },
@@ -30,13 +24,7 @@
         "",
         "",
         "milo is here guyss!",
-        "milo is here again",
-        "I like here",
-        "another post",
-        "like posting",
-        "dancing!",
-        "am I in page 4",
-        "Jack pls shut up!"
+        "hi again !!"
       ],
       "id": 2
     },
@@ -52,47 +40,25 @@
         "Asghar likes here!"
       ],
       "id": 3
-    },
-    {
-      "fullName": "a",
-      "username": "a",
-      "email": "a",
-      "password": "a",
-      "posts": [
-        "",
-        ""
-      ],
-      "commentBoxBool": "",
-      "comments": [
-        "",
-        ""
-      ],
-      "id": 4
-    },
-    {
-      "fullName": "q",
-      "username": "q",
-      "email": "q",
-      "password": "q",
-      "posts": [
-        "",
-        ""
-      ],
-      "commentBoxBool": "",
-      "comments": [
-        "",
-        ""
-      ],
-      "id": 5
     }
   ],
   "homePosts": [
     {
       "userid": 1,
       "userPost": "I'm Jack here",
-      "postLikes": 0,
+      "postLikes": 1,
       "postLikeBool": false,
-      "id": 1
+      "id": 1,
+      "commentBoxBool": false,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "Smith?!",
+          "by": "Milo Best"
+        }
+      ]
     },
     {
       "userid": 1,
@@ -111,7 +77,7 @@
     {
       "userid": 1,
       "userPost": "<3 <3 babe.",
-      "postLikes": 2,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 4
     },
@@ -127,7 +93,21 @@
       "userPost": "jane signup here so be happy!",
       "postLikes": 0,
       "postLikeBool": false,
-      "id": 7
+      "id": 7,
+      "commentBoxBool": false,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "Good",
+          "by": "Milo Best"
+        },
+        {
+          "comment": "WHO?",
+          "by": "Milo Best"
+        }
+      ]
     },
     {
       "userid": 3,
@@ -141,129 +121,17 @@
           "user": ""
         },
         {
-          "comment": "I'm Jack here",
-          "by": "Jack Smith"
+          "comment": "we like Asghar too!",
+          "by": "Milo Best"
         }
       ]
     },
     {
       "userid": 2,
-      "userPost": "milo is here again",
+      "userPost": "hi again !!",
       "postLikes": 0,
       "postLikeBool": false,
       "id": 9
-    },
-    {
-      "userid": 2,
-      "userPost": "I like here",
-      "postLikes": 1,
-      "postLikeBool": false,
-      "id": 10
-    },
-    {
-      "userid": 2,
-      "userPost": "another post",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 11
-    },
-    {
-      "userid": 2,
-      "userPost": "like posting",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 12
-    },
-    {
-      "userid": 2,
-      "userPost": "dancing!",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 13
-    },
-    {
-      "userid": 1,
-      "userPost": "New Version of Jack is here!",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 14
-    },
-    {
-      "userid": 1,
-      "userPost": "check for page 4",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 15
-    },
-    {
-      "userid": 1,
-      "userPost": "another page 4 test",
-      "postLikes": 1,
-      "postLikeBool": false,
-      "id": 16
-    },
-    {
-      "userid": 2,
-      "userPost": "am I in page 4",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 17
-    },
-    {
-      "userid": 1,
-      "userPost": "I'm jack here Hello!",
-      "postLikes": 1,
-      "postLikeBool": false,
-      "id": 18
-    },
-    {
-      "userid": 1,
-      "userPost": "How R U guys?!",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 19
-    },
-    {
-      "userid": 1,
-      "userPost": "Talk to me",
-      "postLikes": 4,
-      "postLikeBool": false,
-      "id": 20,
-      "commentBoxBool": false,
-      "comments": [
-        {
-          "user": ""
-        },
-        {
-          "comment": "no one talks?",
-          "by": "Jack Smith"
-        }
-      ]
-    },
-    {
-      "userid": 2,
-      "userPost": "Jack pls shut up!",
-      "postLikes": 1,
-      "postLikeBool": false,
-      "id": 21,
-      "commentBoxBool": false,
-      "comments": [
-        {
-          "user": ""
-        },
-        {
-          "comment": "another test",
-          "by": "Milo Best"
-        },
-        {
-          "comment": "milo test",
-          "by": "Milo Best"
-        },
-        {
-          "comment": "hi",
-          "by": "Milo Best"
-        }
-      ]
     }
   ]
 }

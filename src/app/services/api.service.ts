@@ -16,6 +16,10 @@ export class ApiService {
   getFromUsers() {
     return this.http.get<any>('http://localhost:3000/users');
   }
+  getFromUsersById(id: string) {
+    return this.http.get<any>('http://localhost:3000/users/' + id);
+  }
+
   getFromHomePostsIndash(page: number, limit: number) {
     return this.http.get<any>(
       `http://localhost:3000/homePosts?_page=${page}&_limit=${limit}`

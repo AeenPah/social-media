@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
   anotherCurrntPost: string[] = [''];
   homePost: any;
   tempUserId: any;
+  userId: string;
 
   constructor(
     private userDataService: UserDataService,
@@ -25,17 +26,18 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.userDataService.userData) {
-      this.user = this.userDataService.userData;
-      this.currentPost = this.user.posts;
-      this.anotherCurrntPost = this.user.posts;
+    this.userId = localStorage.getItem('UserId');
+    if (this.userId != '0') {
+      this.api.getFromUsersById(this.userId).subscribe((res) => {
+        this.user = res;
+        this.currentPost = this.user.posts;
+        this.anotherCurrntPost = this.user.posts;
+      });
+      // this.user = this.userDataService.userData;
       console.log(this.user);
     } else {
       this.router.navigate(['/login']);
     }
-    //  --------------------------------------------------
-    // console.log(this.currentPost.length);
-    // console.log(this.user.id);
   }
 
   postText() {
