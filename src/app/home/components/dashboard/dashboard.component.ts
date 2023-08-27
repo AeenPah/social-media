@@ -1,7 +1,6 @@
 import { Component, DestroyRef, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,11 +23,7 @@ export class DashboardComponent implements OnInit {
   test: any;
   onlineUser: any;
 
-  constructor(
-    private api: ApiService,
-    private destroyRef: DestroyRef,
-    private userDataService: UserDataService
-  ) {}
+  constructor(private api: ApiService, private destroyRef: DestroyRef) {}
 
   ngOnInit(): void {
     this.getOnlineUser(localStorage.getItem('UserId'));
@@ -113,20 +108,4 @@ export class DashboardComponent implements OnInit {
   receiveFromChild(posts: any) {
     this.allPostsInf = posts;
   }
-  // toNextPage() {
-  //   if (this.counter < this.loopCount) {
-  //     this.counter++;
-  //     this.allPostsInf = this.postsByPages[this.counter];
-  //   }
-  // }
-  // toPrevPage() {
-  //   if (this.counter > 0) {
-  //     this.counter--;
-  //     this.allPostsInf = this.postsByPages[this.counter];
-  //   }
-  // }
-  // goToPage(page: number) {
-  //   this.counter = page;
-  //   this.allPostsInf = this.postsByPages[page];
-  // }
 }

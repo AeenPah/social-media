@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +11,10 @@ import { UserDataService } from 'src/app/services/user-data.service';
 })
 export class LoginComponent implements OnInit {
   formLogin!: FormGroup;
-  // canDeactiveBool: boolean = true;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private userDataService: UserDataService,
     private api: ApiService,
     private authService: AuthService
   ) {}
@@ -27,8 +24,6 @@ export class LoginComponent implements OnInit {
       username: [''],
       password: [''],
     });
-    // this.canDeactiveBool = true;
-    console.log(this.authService.loggedIn); //delete it..
   }
 
   submitLogin() {
@@ -41,9 +36,7 @@ export class LoginComponent implements OnInit {
       });
       if (user) {
         alert('Right!!');
-        this.userDataService.userData = user;
-        // this.canDeactiveBool = false;
-        this.authService.login();
+        this.authService.login(user.id);
         this.router.navigate(['/profile']);
       } else {
         alert('somthing Wrong!');
@@ -52,14 +45,6 @@ export class LoginComponent implements OnInit {
     });
   }
   register() {
-    // this.canDeactiveBool = false;
     this.router.navigate(['sign-up']);
   }
-  // canExit() {
-  //   if (this.canDeactiveBool) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
 }
