@@ -81,6 +81,7 @@ export class DashboardComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((res) => {
         this.allPostsInf = res;
+        this.allPostsInf = this.allPostsInf.reverse();
       });
   }
   getUsers() {
@@ -97,10 +98,6 @@ export class DashboardComponent implements OnInit {
       this.onlineUser = res;
     });
   }
-  // // for page controller...
-  // receiveFromChild(posts: any) {
-  //   this.allPostsInf = posts;
-  // }
   toNextPage() {
     if (this.newCounter <= this.postNumbers) {
       this.newCounter++;

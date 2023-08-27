@@ -1,9 +1,9 @@
 <div class="container">
   <div class="user-information">
     <div>profile avatar</div>
-    <div>Full Name : {{ user.fullName }}</div>
-    <div>Username : {{ user.username }}</div>
-    <div>Email : {{ user.email }}</div>
+    <div>Full Name : {{ user?.fullName }}</div>
+    <div>Username : {{ user?.username }}</div>
+    <div>Email : {{ user?.email }}</div>
   </div>
   <hr />
   <hr />
@@ -17,7 +17,7 @@
   </div>
   <!-- -------- -->
   <div class="prev-posts">
-    <div *ngFor="let post of user.posts; let i = index">
+    <div *ngFor="let post of user?.posts; let i = index">
       <div *ngIf="post != ''">
         <div class="inner-post">{{ i - 1 }} // {{ post }}</div>
         <button (click)="deleteTextHome(i)">Delete</button>

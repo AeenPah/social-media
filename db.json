@@ -43,6 +43,23 @@
         "Asghar likes here!"
       ],
       "id": 3
+    },
+    {
+      "fullName": "Fred Funy",
+      "username": "fred",
+      "email": "fered@fun.com",
+      "password": "fred",
+      "posts": [
+        "",
+        "",
+        "Fred start from here!"
+      ],
+      "commentBoxBool": "",
+      "comments": [
+        "",
+        ""
+      ],
+      "id": 4
     }
   ],
   "homePosts": [
@@ -60,6 +77,10 @@
         {
           "comment": "Smith?!",
           "by": "Milo Best"
+        },
+        {
+          "comment": "I'm Fred",
+          "by": "Fred Funy"
         }
       ]
     },
@@ -174,6 +195,13 @@
       "postLikes": 0,
       "postLikeBool": false,
       "id": 14
+    },
+    {
+      "userid": 4,
+      "userPost": "Fred start from here!",
+      "postLikes": 0,
+      "postLikeBool": false,
+      "id": 15
     }
   ]
 }
