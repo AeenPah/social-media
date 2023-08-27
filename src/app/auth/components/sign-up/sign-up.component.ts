@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
@@ -15,7 +16,8 @@ export class SignUpComponent {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private api: ApiService
+    private api: ApiService,
+    private destroyRef: DestroyRef
   ) {}
 
   ngOnInit(): void {
@@ -33,11 +35,14 @@ export class SignUpComponent {
   submitSignUp() {
     this.formSignUP.value.posts = this.primaryPosts;
     this.formSignUP.value.comments = this.primaryPosts;
-    this.api.postUsers(this.formSignUP.value).subscribe(() => {
-      console.log('http posted!!');
-      this.router.navigate(['/auth/login']);
-      this.formSignUP.reset();
-    });
+    this.api
+      .postUsers(this.formSignUP.value)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        console.log('http posted!!');
+        this.router.navigate(['/auth/login']);
+        this.formSignUP.reset();
+      });
   }
   toLogin() {
     this.router.navigate(['/login']);

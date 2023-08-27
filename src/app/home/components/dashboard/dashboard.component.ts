@@ -66,7 +66,7 @@ export class DashboardComponent implements OnInit {
   getAllPosts() {
     this.api
       .getFromHomePosts()
-      .pipe()
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((res) => {
         this.postNumbers = res.length;
         this.postNumbers = Math.ceil(this.postNumbers / 5);
@@ -78,7 +78,7 @@ export class DashboardComponent implements OnInit {
   getPosts() {
     this.api
       .getFromHomePostsIndash(this.newCounter, 5)
-      .pipe()
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((res) => {
         this.allPostsInf = res;
       });
