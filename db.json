@@ -101,9 +101,23 @@
     {
       "userid": 1,
       "userPost": "<3 <3 babe.",
-      "postLikes": 1,
-      "postLikeBool": false,
-      "id": 4
+      "postLikes": 2,
+      "postLikeBool": true,
+      "id": 4,
+      "commentBoxBool": false,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "good",
+          "by": "Fred Funy"
+        },
+        {
+          "comment": "comment",
+          "by": "Milo Best"
+        }
+      ]
     },
     {
       "userid": 2,

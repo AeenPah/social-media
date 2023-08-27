@@ -99,7 +99,7 @@ export class DashboardComponent implements OnInit {
     });
   }
   toNextPage() {
-    if (this.newCounter <= this.postNumbers) {
+    if (this.newCounter < this.postNumbers) {
       this.newCounter++;
       this.getPosts();
     }
