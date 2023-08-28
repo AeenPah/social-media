@@ -33,14 +33,16 @@
   width: 250px;
   height: 40px;
 }
-.form label {
-  /* margin-left: 15px; */
-}
-.form .submit {
-  /* margin-left: 15px; */
-}
 .form .text {
   margin: 15px 0;
+}
+.form .submitbtn {
+  color: white;
+  background-color: rgb(42, 107, 192);
+}
+.form .submitbtn:hover {
+  color: rgb(210, 207, 207);
+  background-color: rgb(25, 75, 141);
 }
 
 .changerLink:hover {

@@ -28,7 +28,6 @@ export class DashboardComponent implements OnInit {
 
   likePost(item: any) {
     if (!item.postLikeBool) {
-      console.log(item);
       item.postLikes++;
       this.api
         .putHomePosts(item.id, item)

@@ -66,7 +66,7 @@
     {
       "userid": 1,
       "userPost": "I'm Jack here",
-      "postLikes": 1,
+      "postLikes": 2,
       "postLikeBool": false,
       "id": 1,
       "commentBoxBool": false,
@@ -87,14 +87,14 @@
     {
       "userid": 1,
       "userPost": "Follow jack the great ",
-      "postLikes": 0,
+      "postLikes": 4,
       "postLikeBool": false,
       "id": 2
     },
     {
       "userid": 1,
       "userPost": "I'll post short story",
-      "postLikes": 0,
+      "postLikes": 2,
       "postLikeBool": false,
       "id": 3
     },
@@ -116,13 +116,17 @@
         {
           "comment": "comment",
           "by": "Milo Best"
+        },
+        {
+          "comment": "OK",
+          "by": "Jack Smith"
         }
       ]
     },
     {
       "userid": 2,
       "userPost": "milo is here guyss!",
-      "postLikes": 0,
+      "postLikes": 6,
       "postLikeBool": false,
       "id": 5
     },
@@ -192,7 +196,7 @@
     {
       "userid": 2,
       "userPost": "sky",
-      "postLikes": 0,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 11
     },
@@ -206,7 +210,7 @@
     {
       "userid": 2,
       "userPost": "im milo",
-      "postLikes": 0,
+      "postLikes": 1,
       "postLikeBool": false,
       "id": 14
     },

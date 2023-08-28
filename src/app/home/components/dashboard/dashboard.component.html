@@ -5,19 +5,40 @@
     </div>
     <div class="post">{{ item.userPost }}</div>
     <div class="post-reactions">
-      <div class="likes">{{ item.postLikes }}</div>
-      <button (click)="likePost(item)">Like</button>
+      <div class="likes">
+        <div>{{ item.postLikes }}</div>
+        <img
+          src="../../../../assets/icons8-like-24.png"
+          class="heart-liked"
+          (click)="likePost(item)"
+          *ngIf="!item.postLikeBool"
+        />
+        <img
+          src="../../../../assets/icons8-like-48.png"
+          class="heart-liked"
+          *ngIf="item.postLikeBool"
+        />
+      </div>
+
       <!-- comment section -->
-      <button (click)="showCommentBox(item)">Comment</button>
+      <button (click)="showCommentBox(item)" class="button button-comment">
+        Comment
+      </button>
       <div class="comment-box" *ngIf="item.commentBoxBool">
-        Post Comment : <input type="text" #commentInput /><button
+        Post Comment
+        <input #commentInput type="text" class="comment-input" /><button
           (click)="postComment(commentInput.value, item)"
+          class="button button-comment"
         >
           Post
         </button>
-        <div *ngFor="let comment of item.comments">
-          <div *ngIf="comment.by">
-            <div>{{ comment.by }} ) {{ comment.comment }}</div>
+        <div class="posted-comment" *ngIf="item.comments">
+          <div *ngFor="let comment of item.comments">
+            <div *ngIf="comment.by" class="each-comments-part">
+              <div class="comment-by">{{ comment.by }}</div>
+              :
+              <div>{{ comment.comment }}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -27,10 +48,10 @@
   <!-- page-controler -->
   <div class="page-controller">
     <div>Page: {{ newCounter }}</div>
-    <button (click)="toPrevPage()">click to Prev</button>
+    <button (click)="toPrevPage()" class="button">click to Prev</button>
     <div *ngFor="let page of postNumbersArr">
       <div (click)="goToPage(page)" class="page-numbers">{{ page }}</div>
     </div>
-    <button (click)="toNextPage()">click to next</button>
+    <button (click)="toNextPage()" class="button">click to next</button>
   </div>
 </div>

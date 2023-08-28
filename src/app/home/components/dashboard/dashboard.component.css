@@ -9,6 +9,10 @@
   margin: 10px 0 0 0;
   font-size: 1.55em;
 }
+.full-name:hover {
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
 .post {
   font-size: 1.3em;
   margin: 10px 0 10px 10px;
@@ -27,6 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 1px 1.5px 1px 0;
 }
 .page-controller > * {
   margin: 0 20px;
@@ -36,6 +41,7 @@
   width: 40px;
   height: 40px;
   text-align: center;
+  padding: 7px;
   border-radius: 10px;
 }
 .page-controller .page-numbers:hover {
@@ -43,4 +49,44 @@
 }
 .page-controller button {
   height: 50px;
+  background-color: #b8dfd5;
+}
+.page-controller button:hover {
+  background-color: #a7c7bf;
+}
+.button-comment {
+  background-color: #b8dfd5;
+}
+.comment-input {
+  width: 350px;
+  height: 25px;
+  border: rgb(69, 69, 69);
+  border-radius: 5px;
+  margin: auto 5px;
+}
+.posted-comment {
+  background-color: #fefaf7;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.posted-comment .each-comments-part {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+.posted-comment .each-comments-part .comment-by {
+  color: rgba(0, 0, 0, 0.65);
+}
+.posted-comment .each-comments-part .comment-by:hover {
+  color: rgba(0, 0, 250, 0.65);
+  cursor: pointer;
+}
+.likes {
+  display: flex;
+  gap: 5px;
+}
+.likes .heart-liked {
+  width: 18px;
 }
