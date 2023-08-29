@@ -74,6 +74,36 @@
         ""
       ],
       "id": 4
+    },
+    {
+      "fullName": "a",
+      "username": "a",
+      "email": "a",
+      "password": "a",
+      "posts": [
+        "",
+        ""
+      ],
+      "comments": [
+        "",
+        ""
+      ],
+      "id": 5
+    },
+    {
+      "fullName": "q",
+      "username": "q",
+      "email": "q",
+      "password": "q",
+      "posts": [],
+      "id": 6
+    },
+    {
+      "fullName": "w",
+      "username": "w",
+      "email": "w",
+      "password": "w",
+      "id": 7
     }
   ],
   "homePosts": [
@@ -108,24 +138,26 @@
       "userid": 1,
       "userPost": "jack is happy to be here",
       "postLikes": [
-        "",
-        {
-          "liked": true,
-          "likedBy": "Cane Awesome"
-        }
+        ""
       ],
       "postLikeBool": false,
-      "id": 2
+      "id": 2,
+      "commentBoxBool": false,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "Am I?",
+          "by": "Cane Awesome"
+        }
+      ]
     },
     {
       "userid": 1,
       "userPost": "I like this post for myself",
       "postLikes": [
         "",
-        {
-          "liked": true,
-          "likedBy": "Jack Smith"
-        },
         {
           "liked": true,
           "likedBy": "Mery Jane "
@@ -137,6 +169,10 @@
         {
           "liked": true,
           "likedBy": "Cane Awesome"
+        },
+        {
+          "liked": true,
+          "likedBy": "Jack Smith"
         }
       ],
       "postLikeBool": true,
@@ -164,11 +200,7 @@
       "userid": 2,
       "userPost": "first post from mery",
       "postLikes": [
-        "",
-        {
-          "liked": true,
-          "likedBy": "Cane Awesome"
-        }
+        ""
       ],
       "postLikeBool": false,
       "id": 4
@@ -177,11 +209,7 @@
       "userid": 2,
       "userPost": "the second ONE!",
       "postLikes": [
-        "",
-        {
-          "liked": true,
-          "likedBy": "Cane Awesome"
-        }
+        ""
       ],
       "postLikeBool": false,
       "id": 5

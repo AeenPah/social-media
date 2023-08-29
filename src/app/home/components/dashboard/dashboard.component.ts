@@ -26,6 +26,7 @@ export class DashboardComponent implements OnInit {
     this.getUsers();
     this.getPosts();
   }
+
   // primary functions ...
   getOnlineUser(id: string) {
     this.api.getFromUsersById(id).subscribe((res) => {
