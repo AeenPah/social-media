@@ -3,56 +3,70 @@
     {
       "fullName": "Jack Smith",
       "username": "jack",
-      "email": "jackS@gmail.com",
+      "email": "jack@jack.com",
       "password": "jack",
       "posts": [
         "",
         "",
-        "I'm Jack here",
-        "Follow jack the great ",
-        "I'll post short story",
-        "<3 <3 babe."
+        "I'm jack",
+        "jack is happy to be here",
+        "I like this post for myself"
+      ],
+      "commentBoxBool": "",
+      "comments": [
+        "",
+        ""
       ],
       "id": 1
     },
     {
-      "fullName": "Milo Best",
-      "username": "milo",
-      "email": "miloB@email.com",
-      "password": "milo",
+      "fullName": "Mery Jane ",
+      "username": "mery",
+      "email": "mer@gmail.com",
+      "password": "mery",
       "posts": [
         "",
         "",
-        "milo is here guyss!",
-        "milo the Best is here",
-        "sky",
-        "test from milo",
-        "im milo"
+        "first post from mery",
+        "the second ONE!",
+        "Be Happy."
+      ],
+      "commentBoxBool": "",
+      "comments": [
+        "",
+        ""
       ],
       "id": 2
     },
     {
-      "fullName": "Jane July",
+      "fullName": "Jane Stone",
       "username": "jane",
-      "email": "jane@email.com",
+      "email": "jane@me.com",
       "password": "jane",
       "posts": [
         "",
         "",
-        "jane signup here so be happy!",
-        "Asghar likes here!"
+        "jane is Here!",
+        "jane loves here"
+      ],
+      "commentBoxBool": "",
+      "comments": [
+        "",
+        ""
       ],
       "id": 3
     },
     {
-      "fullName": "Fred Funy",
-      "username": "fred",
-      "email": "fered@fun.com",
-      "password": "fred",
+      "fullName": "Cane Awesome",
+      "username": "cane",
+      "email": "cane@we.com",
+      "password": "cane",
       "posts": [
         "",
         "",
-        "Fred start from here!"
+        "cane signed up here!",
+        "post a comment for me.",
+        "thank U all."
       ],
       "commentBoxBool": "",
       "comments": [
@@ -65,9 +79,19 @@
   "homePosts": [
     {
       "userid": 1,
-      "userPost": "I'm Jack here",
-      "postLikes": 2,
-      "postLikeBool": false,
+      "userPost": "I'm jack",
+      "postLikes": [
+        "",
+        {
+          "liked": true,
+          "likedBy": "Mery Jane "
+        },
+        {
+          "liked": true,
+          "likedBy": "Cane Awesome"
+        }
+      ],
+      "postLikeBool": true,
       "id": 1,
       "commentBoxBool": false,
       "comments": [
@@ -75,66 +99,92 @@
           "user": ""
         },
         {
-          "comment": "Smith?!",
-          "by": "Milo Best"
-        },
-        {
-          "comment": "I'm Fred",
-          "by": "Fred Funy"
+          "comment": "I'm Cane",
+          "by": "Cane Awesome"
         }
       ]
     },
     {
       "userid": 1,
-      "userPost": "Follow jack the great ",
-      "postLikes": 4,
+      "userPost": "jack is happy to be here",
+      "postLikes": [
+        ""
+      ],
       "postLikeBool": false,
       "id": 2
     },
     {
       "userid": 1,
-      "userPost": "I'll post short story",
-      "postLikes": 2,
-      "postLikeBool": false,
-      "id": 3
-    },
-    {
-      "userid": 1,
-      "userPost": "<3 <3 babe.",
-      "postLikes": 2,
+      "userPost": "I like this post for myself",
+      "postLikes": [
+        "",
+        {
+          "liked": true,
+          "likedBy": "Jack Smith"
+        },
+        {
+          "liked": true,
+          "likedBy": "Mery Jane "
+        },
+        {
+          "liked": true,
+          "likedBy": "Jane Stone"
+        },
+        {
+          "liked": true,
+          "likedBy": "Cane Awesome"
+        }
+      ],
       "postLikeBool": true,
-      "id": 4,
+      "id": 3,
       "commentBoxBool": false,
       "comments": [
         {
           "user": ""
         },
         {
-          "comment": "good",
-          "by": "Fred Funy"
-        },
-        {
-          "comment": "comment",
-          "by": "Milo Best"
-        },
-        {
-          "comment": "OK",
+          "comment": "and here I comment!",
           "by": "Jack Smith"
+        },
+        {
+          "comment": "Not funny!",
+          "by": "Jane Stone"
+        },
+        {
+          "comment": "A lot of likes here!",
+          "by": "Cane Awesome"
         }
       ]
     },
     {
       "userid": 2,
-      "userPost": "milo is here guyss!",
-      "postLikes": 6,
+      "userPost": "first post from mery",
+      "postLikes": [
+        ""
+      ],
+      "postLikeBool": false,
+      "id": 4
+    },
+    {
+      "userid": 2,
+      "userPost": "the second ONE!",
+      "postLikes": [
+        ""
+      ],
       "postLikeBool": false,
       "id": 5
     },
     {
-      "userid": 3,
-      "userPost": "jane signup here so be happy!",
-      "postLikes": 0,
-      "postLikeBool": false,
+      "userid": 2,
+      "userPost": "Be Happy.",
+      "postLikes": [
+        "",
+        {
+          "liked": true,
+          "likedBy": "Jane Stone"
+        }
+      ],
+      "postLikeBool": true,
       "id": 7,
       "commentBoxBool": false,
       "comments": [
@@ -142,19 +192,21 @@
           "user": ""
         },
         {
-          "comment": "Good",
-          "by": "Milo Best"
-        },
-        {
-          "comment": "WHO?",
-          "by": "Milo Best"
+          "comment": "OK",
+          "by": "Jane Stone"
         }
       ]
     },
     {
       "userid": 3,
-      "userPost": "Asghar likes here!",
-      "postLikes": 0,
+      "userPost": "jane is Here!",
+      "postLikes": [
+        "",
+        {
+          "liked": true,
+          "likedBy": "Cane Awesome"
+        }
+      ],
       "postLikeBool": false,
       "id": 8,
       "commentBoxBool": false,
@@ -163,63 +215,46 @@
           "user": ""
         },
         {
-          "comment": "we like Asghar too!",
-          "by": "Milo Best"
-        },
-        {
-          "comment": "here?!",
-          "by": "Milo Best"
+          "comment": "wellcome jane",
+          "by": "Cane Awesome"
         }
       ]
     },
     {
-      "userid": 2,
-      "userPost": "milo the Best is here",
-      "postLikes": 1,
-      "postLikeBool": true,
-      "id": 10,
-      "commentBoxBool": false,
-      "comments": [
-        {
-          "user": ""
-        },
-        {
-          "comment": "Like this Post",
-          "by": "Milo Best"
-        },
-        {
-          "comment": "Hury",
-          "by": "Milo Best"
-        }
-      ]
+      "userid": 3,
+      "userPost": "jane loves here",
+      "postLikes": [
+        ""
+      ],
+      "postLikeBool": false,
+      "id": 9
     },
     {
-      "userid": 2,
-      "userPost": "sky",
-      "postLikes": 1,
+      "userid": 4,
+      "userPost": "cane signed up here!",
+      "postLikes": [
+        ""
+      ],
+      "postLikeBool": false,
+      "id": 10
+    },
+    {
+      "userid": 4,
+      "userPost": "post a comment for me.",
+      "postLikes": [
+        ""
+      ],
       "postLikeBool": false,
       "id": 11
     },
     {
-      "userid": 2,
-      "userPost": "test from milo",
-      "postLikes": 0,
+      "userid": 4,
+      "userPost": "thank U all.",
+      "postLikes": [
+        ""
+      ],
       "postLikeBool": false,
       "id": 12
-    },
-    {
-      "userid": 2,
-      "userPost": "im milo",
-      "postLikes": 1,
-      "postLikeBool": false,
-      "id": 14
-    },
-    {
-      "userid": 4,
-      "userPost": "Fred start from here!",
-      "postLikes": 0,
-      "postLikeBool": false,
-      "id": 15
     }
   ]
 }

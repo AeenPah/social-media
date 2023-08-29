@@ -25,43 +25,12 @@ export class DashboardComponent implements OnInit {
     this.getUsers();
     this.getPosts();
   }
-
-  likePost(item: any) {
-    if (!item.postLikeBool) {
-      item.postLikes++;
-      this.api
-        .putHomePosts(item.id, item)
-        .pipe(takeUntilDestroyed(this.destroyRef))
-        .subscribe((res) => {
-          console.log(res);
-        });
-      item.postLikeBool = true;
-    }
-  }
-
-  showCommentBox(item: any) {
-    console.log(item);
-
-    item.commentBoxBool = !item.commentBoxBool;
-  }
-  postComment(comment: string, item: any) {
-    if (item.comments) {
-      this.comments = item.comments;
-    }
-    this.comments.push({
-      comment: comment,
-      by: this.onlineUser.fullName,
+  // primary functions ...
+  getOnlineUser(id: string) {
+    this.api.getFromUsersById(id).subscribe((res) => {
+      this.onlineUser = res;
     });
-    item.comments = this.comments;
-    console.log(item);
-    item.commentBoxBool = !item.commentBoxBool;
-    this.api
-      .putHomePosts(item.id, item)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe();
-    this.comments = [{ user: '' }];
   }
-
   getAllPosts() {
     this.api
       .getFromHomePosts()
@@ -80,6 +49,16 @@ export class DashboardComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((res) => {
         this.allPostsInf = res;
+        this.allPostsInf.map((post: any) => {
+          const islikedB = post.postLikes.find((z: any) => {
+            return z.likedBy === this.onlineUser.fullName;
+          });
+          if (islikedB) {
+            post.postLikeBool = true;
+          } else {
+            post.postLikeBool = false;
+          }
+        });
         this.allPostsInf = this.allPostsInf.reverse();
       });
   }
@@ -92,11 +71,37 @@ export class DashboardComponent implements OnInit {
         console.log(this.allUsersInf);
       });
   }
-  getOnlineUser(id: string) {
-    this.api.getFromUsersById(id).subscribe((res) => {
-      this.onlineUser = res;
-    });
+  // posts function ...
+  likePost(item: any) {
+    if (!item.postLikeBool) {
+      item.postLikes.push({ liked: true, likedBy: this.onlineUser.fullName });
+      this.api
+        .putHomePosts(item.id, item)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe();
+      item.postLikeBool = true;
+    }
   }
+  showCommentBox(item: any) {
+    item.commentBoxBool = !item.commentBoxBool;
+  }
+  postComment(comment: string, item: any) {
+    if (item.comments) {
+      this.comments = item.comments;
+    }
+    this.comments.push({
+      comment: comment,
+      by: this.onlineUser.fullName,
+    });
+    item.comments = this.comments;
+    item.commentBoxBool = !item.commentBoxBool;
+    this.api
+      .putHomePosts(item.id, item)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe();
+    this.comments = [{ user: '' }];
+  }
+  // page controller ...
   toNextPage() {
     if (this.newCounter < this.postNumbers) {
       this.newCounter++;

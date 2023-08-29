@@ -53,7 +53,7 @@ export class ProfileComponent implements OnInit {
     this.homePost = {
       userid: this.user.id,
       userPost: this.posttxt,
-      postLikes: 0,
+      postLikes: [''],
       postLikeBool: false,
     };
     this.api
