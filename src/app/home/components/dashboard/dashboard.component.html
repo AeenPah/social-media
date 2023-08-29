@@ -5,8 +5,11 @@
     </div>
     <div class="post">{{ item.userPost }}</div>
     <div class="post-reactions">
+      <!-- like section -->
       <div class="likes">
-        <div>{{ item.postLikes.length - 1 }}</div>
+        <div (click)="showHideLikedByNames(item)" class="likes-length">
+          {{ item.postLikes.length - 1 }}
+        </div>
         <img
           src="../../../../assets/icons8-like-24.png"
           class="heart-liked"
@@ -16,10 +19,17 @@
         <img
           src="../../../../assets/icons8-like-48.png"
           class="heart-liked"
+          (click)="likePost(item)"
           *ngIf="item.postLikeBool"
         />
       </div>
-
+      <div class="show-liked-by" *ngIf="item.showHideLikedByNamesBool">
+        <div *ngFor="let likedby of item.postLikes">
+          <div class="liked-by-name">
+            {{ likedby.likedBy }}
+          </div>
+        </div>
+      </div>
       <!-- comment section -->
       <button (click)="showCommentBox(item)" class="button button-comment">
         Comment

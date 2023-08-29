@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   allPostsInf: any;
   allUsersInf: any;
   comments: any = [{ user: '' }];
+  showHideLikedByNamesBool: boolean = false;
   onlineUser: any;
   // new vars
   newCounter: number = 1;
@@ -68,20 +69,37 @@ export class DashboardComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((res) => {
         this.allUsersInf = res;
-        console.log(this.allUsersInf);
       });
   }
-  // posts function ...
+  // likes functions ...
+  showHideLikedByNames(item: any) {
+    if (item.postLikes.length != 1) {
+      item.showHideLikedByNamesBool = !item.showHideLikedByNamesBool;
+      if ((item.showHideLikedByNamesBool = true)) {
+        setTimeout(() => {
+          item.showHideLikedByNamesBool = false;
+        }, 1500);
+      }
+    }
+  }
   likePost(item: any) {
     if (!item.postLikeBool) {
       item.postLikes.push({ liked: true, likedBy: this.onlineUser.fullName });
-      this.api
-        .putHomePosts(item.id, item)
-        .pipe(takeUntilDestroyed(this.destroyRef))
-        .subscribe();
       item.postLikeBool = true;
+    } else {
+      let likeby: number;
+      likeby = item.postLikes.findIndex((x: any) => {
+        return x.likedBy === this.onlineUser.fullName;
+      });
+      item.postLikes.splice(likeby, 1);
+      item.postLikeBool = false;
     }
+    this.api
+      .putHomePosts(item.id, item)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe();
   }
+  // comment functions ...
   showCommentBox(item: any) {
     item.commentBoxBool = !item.commentBoxBool;
   }

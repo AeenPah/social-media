@@ -108,7 +108,11 @@
       "userid": 1,
       "userPost": "jack is happy to be here",
       "postLikes": [
-        ""
+        "",
+        {
+          "liked": true,
+          "likedBy": "Cane Awesome"
+        }
       ],
       "postLikeBool": false,
       "id": 2
@@ -160,7 +164,11 @@
       "userid": 2,
       "userPost": "first post from mery",
       "postLikes": [
-        ""
+        "",
+        {
+          "liked": true,
+          "likedBy": "Cane Awesome"
+        }
       ],
       "postLikeBool": false,
       "id": 4
@@ -169,7 +177,11 @@
       "userid": 2,
       "userPost": "the second ONE!",
       "postLikes": [
-        ""
+        "",
+        {
+          "liked": true,
+          "likedBy": "Cane Awesome"
+        }
       ],
       "postLikeBool": false,
       "id": 5

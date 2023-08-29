@@ -17,11 +17,7 @@
   font-size: 1.3em;
   margin: 10px 0 10px 10px;
 }
-
-.post-reaction {
-  font-size: 1em;
-}
-
+/* page controller */
 .page-controller {
   margin: 10px auto;
   height: 80px;
@@ -54,6 +50,10 @@
 .page-controller button:hover {
   background-color: #a7c7bf;
 }
+/* comment section */
+.post-reaction {
+  font-size: 1em;
+}
 .button-comment {
   background-color: #b8dfd5;
 }
@@ -70,7 +70,6 @@
   padding: 10px;
   border-radius: 8px;
 }
-
 .posted-comment .each-comments-part {
   display: flex;
   gap: 5px;
@@ -83,10 +82,20 @@
   color: rgba(0, 0, 250, 0.65);
   cursor: pointer;
 }
+/* likes section */
 .likes {
   display: flex;
   gap: 5px;
 }
+.likes .likes-length {
+  cursor: pointer;
+}
 .likes .heart-liked {
   width: 18px;
+}
+.show-liked-by {
+  background-color: #fefaf7;
+  border-radius: 8px;
+  padding: 10px;
+  position: absolute;
 }
