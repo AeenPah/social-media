@@ -3,7 +3,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { IUser } from '../../auth.model';
+import { IUser } from '../../../interfaces/user.interface';
 
 @Component({
   selector: 'app-sign-up',

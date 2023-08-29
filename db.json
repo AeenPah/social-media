@@ -104,6 +104,13 @@
       "email": "w",
       "password": "w",
       "id": 7
+    },
+    {
+      "fullName": "e",
+      "username": "e",
+      "email": "e",
+      "password": "e",
+      "id": 8
     }
   ],
   "homePosts": [

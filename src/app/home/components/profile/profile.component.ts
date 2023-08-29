@@ -1,6 +1,7 @@
 import { Component, DestroyRef, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
+import { IUser } from 'src/app/interfaces/user.interface';
 import { ApiService } from '../../../services/api.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ApiService } from '../../../services/api.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  user: any;
+  user: IUser;
   newuser: any;
   postDate: Date = new Date();
   posttxt!: string;
@@ -36,7 +37,6 @@ export class ProfileComponent implements OnInit {
           this.currentPost = this.user.posts;
           this.anotherCurrntPost = this.user.posts;
         });
-      console.log(this.user);
     } else {
       this.router.navigate(['/login']);
     }
