@@ -298,17 +298,70 @@
       "userid": 4,
       "userPost": "thank U all.",
       "postLikes": [
-        ""
+        "",
+        {
+          "liked": "true",
+          "likedBy": "q"
+        }
       ],
-      "postLikeBool": false,
+      "postLikeBool": true,
       "id": 12
     },
     {
       "userid": 6,
-      "userPost": "hi",
+      "userPost": "test",
       "commentBoxBool": false,
-      "postLikeBool": false,
-      "id": 13
+      "postLikeBool": true,
+      "likeBoxBool": false,
+      "postLikes": [
+        {
+          "liked": "",
+          "likedBy": ""
+        },
+        {
+          "liked": "true",
+          "likedBy": "q"
+        }
+      ],
+      "id": 13,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "yes?",
+          "by": "q"
+        },
+        {
+          "comment": "hi?!",
+          "by": "q"
+        }
+      ]
+    },
+    {
+      "userid": 6,
+      "userPost": "test one",
+      "commentBoxBool": false,
+      "postLikeBool": true,
+      "likeBoxBool": false,
+      "postLikes": [
+        {
+          "liked": "",
+          "likedBy": ""
+        },
+        {
+          "liked": "true",
+          "likedBy": "q"
+        }
+      ],
+      "id": 14,
+      "comments": [
+        "",
+        {
+          "comment": "an",
+          "by": "q"
+        }
+      ]
     }
   ]
 }

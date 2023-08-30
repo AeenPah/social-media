@@ -22,11 +22,12 @@ export class ProfileComponent implements OnInit, IPost {
     private api: ApiService,
     private destroyRef: DestroyRef
   ) {}
+  likeBoxBool: boolean;
   // --- for IPost ---
   userid: number;
   userPost: string;
   postLikeBool: boolean;
-  postLikes?: [{ liked: string; likedBy: string }];
+  postLikes: [{ liked: string; likedBy: string }];
   commentBoxBool: boolean;
   comments?: [{ comment: string; by: string }];
   id?: number;
@@ -71,6 +72,8 @@ export class ProfileComponent implements OnInit, IPost {
       userPost: post,
       commentBoxBool: false,
       postLikeBool: false,
+      likeBoxBool: false,
+      postLikes: [{ liked: '', likedBy: '' }],
     };
     this.api
       .postHomePosts(this.homePost)

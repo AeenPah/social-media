@@ -19,13 +19,13 @@ export class ApiService {
 
   // get ...
   getFromUsers() {
-    return this.http.get<any>('http://localhost:3000/users');
+    return this.http.get<IUser[]>('http://localhost:3000/users');
   }
   getFromUsersById(id: string) {
     return this.http.get<IUser>('http://localhost:3000/users/' + id);
   }
   getFromHomePostsIndash(page: number, limit: number) {
-    return this.http.get<any>(
+    return this.http.get<IPost[]>(
       `http://localhost:3000/homePosts?_page=${page}&_limit=${limit}`
     );
   }
@@ -34,11 +34,8 @@ export class ApiService {
   }
 
   // put ...
-  putUserById(userId: any, user: any) {
-    return this.http.put<any>('http://localhost:3000/users/' + userId, user);
-  }
-  putHomePosts(id: any, item: any) {
-    return this.http.put<any>('http://localhost:3000/homePosts/' + id, item);
+  putHomePosts(id: number, item: IPost) {
+    return this.http.put<IPost>('http://localhost:3000/homePosts/' + id, item);
   }
 
   // delete ...

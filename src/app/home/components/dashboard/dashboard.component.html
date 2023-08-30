@@ -23,7 +23,7 @@
           *ngIf="item.postLikeBool"
         />
       </div>
-      <div class="show-liked-by" *ngIf="item.showHideLikedByNamesBool">
+      <div class="show-liked-by" *ngIf="item.likeBoxBool">
         <div *ngFor="let likedby of item.postLikes">
           <div class="liked-by-name">
             {{ likedby.likedBy }}
@@ -57,7 +57,7 @@
   </div>
   <!-- page-controler -->
   <div class="page-controller">
-    <div>Page: {{ newCounter }}</div>
+    <div>Page: {{ counter }}</div>
     <button (click)="toPrevPage()" class="button">click to Prev</button>
     <div *ngFor="let page of postNumbersArr">
       <div (click)="goToPage(page)" class="page-numbers">{{ page }}</div>
