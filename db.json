@@ -311,16 +311,12 @@
       "userid": 6,
       "userPost": "test",
       "commentBoxBool": false,
-      "postLikeBool": true,
+      "postLikeBool": false,
       "likeBoxBool": false,
       "postLikes": [
         {
           "liked": "",
           "likedBy": ""
-        },
-        {
-          "liked": "true",
-          "likedBy": "q"
         }
       ],
       "id": 13,
@@ -334,6 +330,14 @@
         },
         {
           "comment": "hi?!",
+          "by": "q"
+        },
+        {
+          "comment": "test",
+          "by": "q"
+        },
+        {
+          "comment": "",
           "by": "q"
         }
       ]

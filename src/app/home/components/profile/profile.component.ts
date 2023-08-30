@@ -10,12 +10,13 @@ import { ApiService } from '../../../services/api.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
-export class ProfileComponent implements OnInit, IPost {
-  user: IUser;
+export class ProfileComponent implements OnInit {
+  onlineUser: IUser;
   homePost: IPost;
   userId: string;
   userPosts: IPost[] = [];
   allposts: IPost[];
+  comments: any = [{ user: '' }];
 
   constructor(
     private router: Router,
@@ -23,14 +24,6 @@ export class ProfileComponent implements OnInit, IPost {
     private destroyRef: DestroyRef
   ) {}
   likeBoxBool: boolean;
-  // --- for IPost ---
-  userid: number;
-  userPost: string;
-  postLikeBool: boolean;
-  postLikes: [{ liked: string; likedBy: string }];
-  commentBoxBool: boolean;
-  comments?: [{ comment: string; by: string }];
-  id?: number;
 
   ngOnInit(): void {
     this.checkUserFromAPI();
@@ -45,7 +38,7 @@ export class ProfileComponent implements OnInit, IPost {
         .getFromUsersById(this.userId)
         .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe((res) => {
-          this.user = res;
+          this.onlineUser = res;
         });
     } else {
       this.router.navigate(['/login']);
@@ -90,5 +83,53 @@ export class ProfileComponent implements OnInit, IPost {
       .subscribe(() => {
         this.findUserPosts();
       });
+  }
+  // Like Post ---
+  showHideLikedByNames(item: IPost) {
+    if (item.postLikes.length != 1) {
+      item.likeBoxBool = !item.likeBoxBool;
+      if ((item.likeBoxBool = true)) {
+        setTimeout(() => {
+          item.likeBoxBool = false;
+        }, 1500);
+      }
+    }
+  }
+  likePost(item: IPost) {
+    if (!item.postLikeBool) {
+      item.postLikes.push({ liked: 'true', likedBy: this.onlineUser.fullName });
+      item.postLikeBool = true;
+    } else {
+      let likeby: number;
+      likeby = item.postLikes.findIndex((x) => {
+        return x.likedBy === this.onlineUser.fullName;
+      });
+      item.postLikes.splice(likeby, 1);
+      item.postLikeBool = false;
+    }
+    this.api
+      .putHomePosts(item.id, item)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe();
+  }
+  // Comment ---
+  showCommentBox(item: IPost) {
+    item.commentBoxBool = !item.commentBoxBool;
+  }
+  postComment(comment: string, item: IPost) {
+    if (item.comments) {
+      this.comments = item.comments;
+    }
+    this.comments.push({
+      comment: comment,
+      by: this.onlineUser.fullName,
+    });
+    item.comments = this.comments;
+    item.commentBoxBool = !item.commentBoxBool;
+    this.api
+      .putHomePosts(item.id, item)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe();
+    this.comments = [''];
   }
 }
