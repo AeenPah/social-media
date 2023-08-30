@@ -1,9 +1,9 @@
 export interface IPost {
   userid: number;
   userPost: string;
-  postLikes?: [{ liked: string; likedBy: string }];
   postLikeBool: boolean;
-  comments?: [{ comment: string; by: string }];
+  postLikes?: [{ liked: string; likedBy: string }];
   commentBoxBool: boolean;
+  comments?: [{ comment: string; by: string }];
   id?: number;
 }

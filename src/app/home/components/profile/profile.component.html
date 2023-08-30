@@ -7,20 +7,22 @@
   </div>
   <hr />
   <hr />
-  <!-- -------- -->
+  <!-- upload-post -->
   <div class="upload-post">
     <div>Let's post something</div>
     <div>
-      <input type="text" [(ngModel)]="posttxt" />
+      <input type="text" #inputPost />
     </div>
-    <button (click)="postText()" class="button button-comment">POST</button>
+    <button (click)="postText(inputPost.value)" class="button button-comment">
+      POST
+    </button>
   </div>
-  <!-- -------- -->
+  <!-- prev-posts -->
   <div class="prev-posts">
-    <div *ngFor="let post of user?.posts; let i = index">
-      <div *ngIf="post != ''">
-        <div class="inner-post">{{ i - 1 }} // {{ post }}</div>
-        <button (click)="deleteTextHome(i)">Delete</button>
+    <div *ngFor="let post of userPosts; let i = index">
+      <div>
+        <div class="inner-post">{{ i + 1 }} // {{ post.userPost }}</div>
+        <button (click)="deletePostHome(post.id)">Delete</button>
       </div>
     </div>
   </div>

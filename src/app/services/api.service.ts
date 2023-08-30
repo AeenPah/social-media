@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IPost } from '../interfaces/post.inteface';
 import { IUser } from '../interfaces/user.interface';
 
 @Injectable({
@@ -9,10 +10,10 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   // post ...
-  postHomePosts(homePost: any) {
-    return this.http.post<any>('http://localhost:3000/homePosts', homePost);
+  postHomePosts(homePost: IPost) {
+    return this.http.post<IPost>('http://localhost:3000/homePosts', homePost);
   }
-  postUsers(user: any) {
+  postUsers(user: IUser) {
     return this.http.post('http://localhost:3000/users', user);
   }
 
@@ -29,7 +30,7 @@ export class ApiService {
     );
   }
   getFromHomePosts() {
-    return this.http.get<any>(`http://localhost:3000/homePosts`);
+    return this.http.get<IPost[]>(`http://localhost:3000/homePosts`);
   }
 
   // put ...
@@ -41,7 +42,7 @@ export class ApiService {
   }
 
   // delete ...
-  deleteFromHomePosts(id: any) {
-    return this.http.delete<any>('http://localhost:3000/homePosts/' + id);
+  deleteFromHomePosts(id: number) {
+    return this.http.delete<number>('http://localhost:3000/homePosts/' + id);
   }
 }

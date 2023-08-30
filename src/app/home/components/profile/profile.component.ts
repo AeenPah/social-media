@@ -1,6 +1,7 @@
 import { Component, DestroyRef, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
+import { IPost } from 'src/app/interfaces/post.inteface';
 import { IUser } from 'src/app/interfaces/user.interface';
 import { ApiService } from '../../../services/api.service';
 
@@ -9,24 +10,34 @@ import { ApiService } from '../../../services/api.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, IPost {
   user: IUser;
-  newuser: any;
-  postDate: Date = new Date();
-  posttxt!: string;
-  currentPost: string[] = [''];
-  anotherCurrntPost: string[] = [''];
-  homePost: any;
-  tempUserId: any;
+  homePost: IPost;
   userId: string;
+  userPosts: IPost[] = [];
+  allposts: IPost[];
 
   constructor(
     private router: Router,
     private api: ApiService,
     private destroyRef: DestroyRef
   ) {}
+  // --- for IPost ---
+  userid: number;
+  userPost: string;
+  postLikeBool: boolean;
+  postLikes?: [{ liked: string; likedBy: string }];
+  commentBoxBool: boolean;
+  comments?: [{ comment: string; by: string }];
+  id?: number;
 
   ngOnInit(): void {
+    this.checkUserFromAPI();
+    this.findUserPosts();
+  }
+
+  //  Primary User Check ---
+  checkUserFromAPI() {
     this.userId = localStorage.getItem('UserId');
     if (this.userId != '0') {
       this.api
@@ -34,61 +45,47 @@ export class ProfileComponent implements OnInit {
         .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe((res) => {
           this.user = res;
-          this.currentPost = this.user.posts;
-          this.anotherCurrntPost = this.user.posts;
         });
     } else {
       this.router.navigate(['/login']);
     }
   }
-
-  postText() {
-    this.currentPost.push(this.posttxt);
-    this.user.posts = this.currentPost;
+  findUserPosts() {
+    this.userPosts = [];
     this.api
-      .putUserById(this.user.id, this.user)
+      .getFromHomePosts()
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe();
-    //  --------------------------------------------------
+      .subscribe((res) => {
+        this.allposts = res;
+        this.allposts.map((userPostFind: IPost) => {
+          if (+localStorage.getItem('UserId') == userPostFind.userid) {
+            this.userPosts.push(userPostFind);
+          }
+        });
+      });
+  }
+  //  Post Text ---
+  postText(post: string) {
     this.homePost = {
-      userid: this.user.id,
-      userPost: this.posttxt,
-      postLikes: [''],
+      userid: +localStorage.getItem('UserId'),
+      userPost: post,
+      commentBoxBool: false,
       postLikeBool: false,
     };
     this.api
       .postHomePosts(this.homePost)
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe();
+      .subscribe(() => {
+        this.findUserPosts();
+      });
   }
-  deleteText(a: number) {
-    this.currentPost.splice(a, 1);
-    this.user.posts = this.currentPost;
+  //  Delete Post ---
+  deletePostHome(postId: number) {
     this.api
-      .putUserById(this.user.id, this.user)
+      .deleteFromHomePosts(postId)
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe();
-  }
-  deleteTextHome(a: number) {
-    this.api
-      .getFromHomePosts()
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((res) => {
-        const homepost = res.find((item: any) => {
-          this.tempUserId = item.id;
-
-          return item.userPost == this.anotherCurrntPost[a];
-        });
-        if (homepost) {
-          console.log('we find it');
-          this.api
-            .deleteFromHomePosts(this.tempUserId)
-            .pipe(takeUntilDestroyed(this.destroyRef))
-            .subscribe();
-          this.deleteText(a);
-        } else {
-          console.log('We can not find the post in home!');
-        }
+      .subscribe(() => {
+        this.findUserPosts();
       });
   }
 }
