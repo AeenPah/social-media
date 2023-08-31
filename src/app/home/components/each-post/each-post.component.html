@@ -1,0 +1,54 @@
+<div class="full-name" [routerLink]="['/user-profile/' + post.userid]">
+  {{ allUsersInf[post.userid - 1].fullName }}
+</div>
+<div class="post">{{ post.userPost }}</div>
+<div class="post-reactions">
+  <!-- like section -->
+  <div class="likes">
+    <div (click)="showHideLikedByNames(post)" class="likes-length">
+      {{ post.postLikes.length - 1 }}
+    </div>
+    <img
+      src="../../../../assets/icons8-like-24.png"
+      class="heart-liked"
+      (click)="likePost(post)"
+      *ngIf="!post.postLikeBool"
+    />
+    <img
+      src="../../../../assets/icons8-like-48.png"
+      class="heart-liked"
+      (click)="likePost(post)"
+      *ngIf="post.postLikeBool"
+    />
+  </div>
+  <div class="show-liked-by" *ngIf="post.likeBoxBool">
+    <div *ngFor="let likedby of post.postLikes">
+      <div class="liked-by-name">
+        {{ likedby.likedBy }}
+      </div>
+    </div>
+  </div>
+  <!-- comment section -->
+  <button (click)="showCommentBox(post)" class="button button-comment">
+    Comment
+  </button>
+  <div class="comment-box" *ngIf="post.commentBoxBool">
+    Post Comment
+    <input #commentInput type="text" class="comment-input" /><button
+      (click)="postComment(commentInput.value, post)"
+      class="button button-comment"
+    >
+      Post
+    </button>
+    <div class="posted-comment" *ngIf="post.comments">
+      <div *ngFor="let comment of post.comments">
+        <div *ngIf="comment.by" class="each-comments-part">
+          <div class="comment-by">{{ comment.by }}</div>
+          :
+          <div>{{ comment.comment }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />

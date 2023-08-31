@@ -72,54 +72,7 @@ export class DashboardComponent implements OnInit {
         this.allUsersInf = res;
       });
   }
-  // likes functions ...
-  showHideLikedByNames(item: IPost) {
-    if (item.postLikes.length != 1) {
-      item.likeBoxBool = !item.likeBoxBool;
-      if ((item.likeBoxBool = true)) {
-        setTimeout(() => {
-          item.likeBoxBool = false;
-        }, 1500);
-      }
-    }
-  }
-  likePost(item: IPost) {
-    if (!item.postLikeBool) {
-      item.postLikes.push({ liked: 'true', likedBy: this.onlineUser.fullName });
-      item.postLikeBool = true;
-    } else {
-      let likeby: number;
-      likeby = item.postLikes.findIndex((x) => {
-        return x.likedBy === this.onlineUser.fullName;
-      });
-      item.postLikes.splice(likeby, 1);
-      item.postLikeBool = false;
-    }
-    this.api
-      .putHomePosts(item.id, item)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe();
-  }
-  // comment functions ...
-  showCommentBox(item: IPost) {
-    item.commentBoxBool = !item.commentBoxBool;
-  }
-  postComment(comment: string, item: IPost) {
-    if (item.comments) {
-      this.comments = item.comments;
-    }
-    this.comments.push({
-      comment: comment,
-      by: this.onlineUser.fullName,
-    });
-    item.comments = this.comments;
-    item.commentBoxBool = !item.commentBoxBool;
-    this.api
-      .putHomePosts(item.id, item)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe();
-    this.comments = [''];
-  }
+
   // page controller ...
   toNextPage() {
     if (this.counter < this.postNumbers) {
