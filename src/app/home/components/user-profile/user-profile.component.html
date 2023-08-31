@@ -1,18 +1,16 @@
 <div class="container">
   <div class="user-information">
     <div>profile avatar</div>
-    <div>Full Name : {{ userall.fullName }}</div>
-    <div>Username : {{ userall.username }}</div>
-    <div>Email : {{ userall.email }}</div>
+    <div>Full Name : {{ user.fullName }}</div>
+    <div>Username : {{ user.username }}</div>
+    <div>Email : {{ user.email }}</div>
   </div>
   <hr />
   <hr />
   <!-- -------- -->
   <div class="prev-posts">
-    <div *ngFor="let post of userall.posts; let i = index">
-      <div *ngIf="post != ''">
-        <div class="inner-post">{{ i - 1 }} // {{ post }}</div>
-      </div>
+    <div *ngFor="let post of userPosts">
+      <app-each-post [post]="post"></app-each-post>
     </div>
   </div>
 </div>
