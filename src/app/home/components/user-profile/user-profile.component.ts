@@ -19,7 +19,6 @@ export class UserProfileComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private api: ApiService,
-    private authservice: AuthService,
     private destroyRef: DestroyRef
   ) {}
 
