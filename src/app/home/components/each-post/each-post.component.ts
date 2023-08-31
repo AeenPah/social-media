@@ -14,6 +14,7 @@ export class EachPostComponent implements OnInit {
   comments: any = [{ user: '' }];
   @Input() post: IPost;
   @Input() allUsersInf: IUser[];
+  @Input() inProfilePageBool: boolean;
 
   constructor(private api: ApiService, private destroyRef: DestroyRef) {}
 
@@ -54,6 +55,15 @@ export class EachPostComponent implements OnInit {
       .putHomePosts(item.id, item)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe();
+  }
+  // delete section ...
+  deletePostHome(postId: number) {
+    this.api
+      .deleteFromHomePosts(postId)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        // this.findUserPosts();
+      });
   }
   // comment section ...
   showCommentBox(item: IPost) {

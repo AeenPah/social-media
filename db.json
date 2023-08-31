@@ -116,33 +116,6 @@
   "homePosts": [
     {
       "userid": 1,
-      "userPost": "I'm jack",
-      "postLikes": [
-        "",
-        {
-          "liked": true,
-          "likedBy": "Mery Jane "
-        },
-        {
-          "liked": true,
-          "likedBy": "Cane Awesome"
-        }
-      ],
-      "postLikeBool": true,
-      "id": 1,
-      "commentBoxBool": false,
-      "comments": [
-        {
-          "user": ""
-        },
-        {
-          "comment": "I'm Cane",
-          "by": "Cane Awesome"
-        }
-      ]
-    },
-    {
-      "userid": 1,
       "userPost": "jack is happy to be here",
       "postLikes": [
         ""
@@ -216,10 +189,24 @@
       "userid": 2,
       "userPost": "the second ONE!",
       "postLikes": [
-        ""
+        "",
+        {
+          "liked": "true",
+          "likedBy": "Jack Smith"
+        }
       ],
-      "postLikeBool": false,
-      "id": 5
+      "postLikeBool": true,
+      "id": 5,
+      "commentBoxBool": true,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "na baba!!",
+          "by": "Jack Smith"
+        }
+      ]
     },
     {
       "userid": 2,

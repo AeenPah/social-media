@@ -1,3 +1,5 @@
+.container {
+}
 .full-name {
   margin: 10px 0 0 0;
   font-size: 1.55em;
@@ -10,11 +12,47 @@
   font-size: 1.3em;
   margin: 10px 0 10px 10px;
 }
-/* comment section */
-.post-reaction {
+
+.post-reactions {
   font-size: 1em;
+  display: flex;
+  flex-wrap: wrap;
 }
+/* likes section */
+.likes {
+  flex-basis: 85%;
+  display: flex;
+  gap: 5px;
+}
+.likes .likes-length {
+  cursor: pointer;
+}
+.likes .heart-liked {
+  width: 18px;
+}
+.show-liked-by {
+  background-color: #fefaf7;
+  border-radius: 8px;
+  padding: 10px;
+  position: absolute;
+}
+/* delete section  */
+.delete-box {
+  flex-basis: 10%;
+  width: 20px;
+  height: 20px;
+}
+.delete-icon {
+  position: relative;
+  left: 85%;
+  width: 18px;
+}
+.delete-icon:hover {
+  cursor: pointer;
+}
+/* comment section */
 .button-comment {
+  flex-basis: auto;
   background-color: #b8dfd5;
 }
 .comment-input {
@@ -41,21 +79,4 @@
 .posted-comment .each-comments-part .comment-by:hover {
   color: rgba(0, 0, 250, 0.65);
   cursor: pointer;
-}
-/* likes section */
-.likes {
-  display: flex;
-  gap: 5px;
-}
-.likes .likes-length {
-  cursor: pointer;
-}
-.likes .heart-liked {
-  width: 18px;
-}
-.show-liked-by {
-  background-color: #fefaf7;
-  border-radius: 8px;
-  padding: 10px;
-  position: absolute;
 }
