@@ -55,6 +55,15 @@ export class ProfileComponent implements OnInit {
         this.allposts.map((userPostFind: IPost) => {
           if (+localStorage.getItem('UserId') == userPostFind.userid) {
             this.userPosts.push(userPostFind);
+            // find out liked by user or not ...
+            const isLikedB: any = userPostFind.postLikes.find((x) => {
+              return x.likedBy === this.onlineUser?.fullName;
+            });
+            if (isLikedB) {
+              userPostFind.postLikeBool = true;
+            } else {
+              userPostFind.postLikeBool = false;
+            }
           }
         });
       });
