@@ -3,27 +3,55 @@
     <div class="title">SIGN UP</div>
     <div class="form">
       <form [formGroup]="formSignUP" (submit)="submitSignUp()">
-        <label>Full Name : </label><br />
+        <label>Full Name : </label>
+        <input class="input-text" type="text" formControlName="fullName" />
+        <p
+          class="error"
+          *ngIf="
+            formSignUP.controls['fullName'].dirty &&
+            !formSignUP.controls['fullName'].valid
+          "
+        >
+          Enter Full Name
+        </p>
+        <label>Username : </label>
+        <input class="input-text" type="text" formControlName="username" />
+        <p
+          class="error"
+          *ngIf="
+            formSignUP.controls['username'].dirty &&
+            !formSignUP.controls['username'].valid
+          "
+        >
+          Enter Username
+        </p>
+        <label>Email : </label>
+        <input class="input-text" type="email" formControlName="email" />
+        <p
+          class="error"
+          *ngIf="
+            formSignUP.controls['email'].dirty &&
+            !formSignUP.controls['email'].valid
+          "
+        >
+          Enter Email Correctly
+        </p>
+        <label>Password : </label>
+        <input class="input-text" type="password" formControlName="password" />
+        <p
+          class="error"
+          *ngIf="
+            formSignUP.controls['password'].dirty &&
+            !formSignUP.controls['password'].valid
+          "
+        >
+          Enter Password
+        </p>
         <input
-          class="input-text"
-          type="text"
-          formControlName="fullName"
-        /><br />
-        <label>Username : </label><br />
-        <input
-          class="input-text"
-          type="text"
-          formControlName="username"
-        /><br />
-        <label>Email : </label><br />
-        <input class="input-text" type="text" formControlName="email" /><br />
-        <label>Password : </label><br />
-        <input
-          class="input-text"
-          type="password"
-          formControlName="password"
-        /><br />
-        <input class="button submitbtn" type="submit" />
+          class="button submitbtn"
+          type="submit"
+          [disabled]="!formSignUP.valid"
+        />
         <div class="text">Forgot password?</div>
         <div class="text" (click)="toLogin()" class="changerLink">
           To Login page
