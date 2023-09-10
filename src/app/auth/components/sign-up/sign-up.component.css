@@ -42,3 +42,12 @@
   color: blue;
   cursor: pointer;
 }
+
+.form .submitbtn {
+  color: white;
+  background-color: rgb(42, 107, 192);
+}
+.form .submitbtn:hover {
+  color: rgb(210, 207, 207);
+  background-color: rgb(25, 75, 141);
+}

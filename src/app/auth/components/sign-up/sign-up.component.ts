@@ -3,6 +3,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { IUser } from '../../../interfaces/user.interface';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,8 +11,9 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent {
-  formSignUP!: FormGroup;
+  formSignUP: FormGroup;
   primaryPosts = ['', ''];
+  userData: IUser;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,16 +29,20 @@ export class SignUpComponent {
       email: [''],
       password: [''],
       posts: [''],
-      commentBoxBool: [''],
-      comments: [''],
     });
   }
 
   submitSignUp() {
-    this.formSignUP.value.posts = this.primaryPosts;
-    this.formSignUP.value.comments = this.primaryPosts;
+    this.userData = {
+      fullName: this.formSignUP.value.fullName,
+      username: this.formSignUP.value.username,
+      email: this.formSignUP.value.email,
+      password: this.formSignUP.value.password,
+    };
+    console.log(this.userData);
+
     this.api
-      .postUsers(this.formSignUP.value)
+      .postUsers(this.userData)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         console.log('http posted!!');

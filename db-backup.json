@@ -1,260 +1,243 @@
 {
   "users": [
     {
-      "fullName": "Jack Smith",
+      "fullName": "Jack Black",
       "username": "jack",
-      "email": "jack@jack.com",
+      "email": "jack@j.com",
       "password": "jack",
-      "posts": [
-        "",
-        "",
-        "I'm jack",
-        "jack is happy to be here",
-        "I like this post for myself"
-      ],
-      "commentBoxBool": "",
-      "comments": [
-        "",
-        ""
-      ],
       "id": 1
     },
     {
-      "fullName": "Mery Jane ",
-      "username": "mery",
-      "email": "mer@gmail.com",
-      "password": "mery",
-      "posts": [
-        "",
-        "",
-        "first post from mery",
-        "the second ONE!",
-        "Be Happy."
-      ],
-      "commentBoxBool": "",
-      "comments": [
-        "",
-        ""
-      ],
+      "fullName": "Jane Astin",
+      "username": "jane",
+      "email": "jane@mail.com",
+      "password": "jane",
       "id": 2
     },
     {
-      "fullName": "Jane Stone",
-      "username": "jane",
-      "email": "jane@me.com",
-      "password": "jane",
-      "posts": [
-        "",
-        "",
-        "jane is Here!",
-        "jane loves here"
-      ],
-      "commentBoxBool": "",
-      "comments": [
-        "",
-        ""
-      ],
+      "fullName": "Meri Green",
+      "username": "meri",
+      "email": "meri@mail.com",
+      "password": "meri",
       "id": 3
     },
     {
-      "fullName": "Cane Awesome",
-      "username": "cane",
-      "email": "cane@we.com",
-      "password": "cane",
-      "posts": [
-        "",
-        "",
-        "cane signed up here!",
-        "post a comment for me.",
-        "thank U all."
-      ],
-      "commentBoxBool": "",
-      "comments": [
-        "",
-        ""
-      ],
+      "fullName": "Milo Funny",
+      "username": "milo",
+      "email": "milo@m.com",
+      "password": "milo",
       "id": 4
     }
   ],
   "homePosts": [
     {
       "userid": 1,
-      "userPost": "I'm jack",
+      "userPost": "first Comment in this app.",
+      "commentBoxBool": false,
+      "postLikeBool": false,
+      "likeBoxBool": false,
       "postLikes": [
-        "",
         {
-          "liked": true,
-          "likedBy": "Mery Jane "
-        },
-        {
-          "liked": true,
-          "likedBy": "Cane Awesome"
+          "liked": "",
+          "likedBy": ""
         }
       ],
-      "postLikeBool": true,
-      "id": 1,
+      "id": 1
+    },
+    {
+      "userid": 1,
+      "userPost": "I'm Jack Black",
       "commentBoxBool": false,
+      "postLikeBool": true,
+      "likeBoxBool": false,
+      "postLikes": [
+        {
+          "liked": "",
+          "likedBy": ""
+        },
+        {
+          "liked": "true",
+          "likedBy": "Jane Astin"
+        }
+      ],
+      "id": 2,
       "comments": [
         {
           "user": ""
         },
         {
-          "comment": "I'm Cane",
-          "by": "Cane Awesome"
+          "comment": "I'm Jane Austin in fact not Astin.",
+          "by": "Jane Astin"
         }
       ]
     },
     {
       "userid": 1,
-      "userPost": "jack is happy to be here",
+      "userPost": "Happy to be here!",
+      "commentBoxBool": false,
+      "postLikeBool": true,
+      "likeBoxBool": false,
       "postLikes": [
-        ""
-      ],
-      "postLikeBool": false,
-      "id": 2
-    },
-    {
-      "userid": 1,
-      "userPost": "I like this post for myself",
-      "postLikes": [
-        "",
         {
-          "liked": true,
-          "likedBy": "Jack Smith"
+          "liked": "",
+          "likedBy": ""
         },
         {
-          "liked": true,
-          "likedBy": "Mery Jane "
+          "liked": "true",
+          "likedBy": "Jane Astin"
         },
         {
-          "liked": true,
-          "likedBy": "Jane Stone"
-        },
-        {
-          "liked": true,
-          "likedBy": "Cane Awesome"
+          "liked": "true",
+          "likedBy": "Milo Funny"
         }
       ],
-      "postLikeBool": true,
       "id": 3,
-      "commentBoxBool": false,
       "comments": [
         {
           "user": ""
         },
         {
-          "comment": "and here I comment!",
-          "by": "Jack Smith"
+          "comment": "Really??",
+          "by": "Jane Astin"
         },
         {
-          "comment": "Not funny!",
-          "by": "Jane Stone"
-        },
-        {
-          "comment": "A lot of likes here!",
-          "by": "Cane Awesome"
+          "comment": "We are Happy too.",
+          "by": "Milo Funny"
         }
       ]
     },
     {
       "userid": 2,
-      "userPost": "first post from mery",
+      "userPost": "second person that sign up here is me!",
+      "commentBoxBool": false,
+      "postLikeBool": true,
+      "likeBoxBool": false,
       "postLikes": [
-        ""
+        {
+          "liked": "",
+          "likedBy": ""
+        },
+        {
+          "liked": "true",
+          "likedBy": "Meri Green"
+        }
       ],
-      "postLikeBool": false,
-      "id": 4
+      "id": 4,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "Good for you.",
+          "by": "Meri Green"
+        }
+      ]
     },
     {
       "userid": 2,
-      "userPost": "the second ONE!",
-      "postLikes": [
-        ""
-      ],
+      "userPost": "What's up Everyone?",
+      "commentBoxBool": false,
       "postLikeBool": false,
+      "likeBoxBool": false,
+      "postLikes": [
+        {
+          "liked": "",
+          "likedBy": ""
+        }
+      ],
       "id": 5
     },
     {
       "userid": 2,
-      "userPost": "Be Happy.",
+      "userPost": "Comment for mePls!",
+      "commentBoxBool": false,
+      "postLikeBool": false,
+      "likeBoxBool": false,
       "postLikes": [
-        "",
         {
-          "liked": true,
-          "likedBy": "Jane Stone"
+          "liked": "",
+          "likedBy": ""
         }
       ],
-      "postLikeBool": true,
+      "id": 6
+    },
+    {
+      "userid": 3,
+      "userPost": "Meri The great is HERE!",
+      "commentBoxBool": false,
+      "postLikeBool": false,
+      "likeBoxBool": false,
+      "postLikes": [
+        {
+          "liked": "",
+          "likedBy": ""
+        }
+      ],
       "id": 7,
-      "commentBoxBool": false,
       "comments": [
         {
           "user": ""
         },
         {
-          "comment": "OK",
-          "by": "Jane Stone"
+          "comment": "I am the great here.",
+          "by": "Milo Funny"
         }
       ]
     },
     {
       "userid": 3,
-      "userPost": "jane is Here!",
+      "userPost": "Like my Posts.",
+      "commentBoxBool": false,
+      "postLikeBool": true,
+      "likeBoxBool": false,
       "postLikes": [
-        "",
         {
-          "liked": true,
-          "likedBy": "Cane Awesome"
+          "liked": "",
+          "likedBy": ""
+        },
+        {
+          "liked": "true",
+          "likedBy": "Milo Funny"
         }
       ],
-      "postLikeBool": false,
       "id": 8,
-      "commentBoxBool": false,
       "comments": [
         {
           "user": ""
         },
         {
-          "comment": "wellcome jane",
-          "by": "Cane Awesome"
+          "comment": "Why?!",
+          "by": "Milo Funny"
         }
       ]
     },
     {
-      "userid": 3,
-      "userPost": "jane loves here",
-      "postLikes": [
-        ""
-      ],
+      "userid": 4,
+      "userPost": "your funny friend is here.",
+      "commentBoxBool": false,
       "postLikeBool": false,
+      "likeBoxBool": false,
+      "postLikes": [
+        {
+          "liked": "",
+          "likedBy": ""
+        }
+      ],
       "id": 9
     },
     {
       "userid": 4,
-      "userPost": "cane signed up here!",
-      "postLikes": [
-        ""
-      ],
+      "userPost": "Write me a Joke.",
+      "commentBoxBool": false,
       "postLikeBool": false,
+      "likeBoxBool": false,
+      "postLikes": [
+        {
+          "liked": "",
+          "likedBy": ""
+        }
+      ],
       "id": 10
-    },
-    {
-      "userid": 4,
-      "userPost": "post a comment for me.",
-      "postLikes": [
-        ""
-      ],
-      "postLikeBool": false,
-      "id": 11
-    },
-    {
-      "userid": 4,
-      "userPost": "thank U all.",
-      "postLikes": [
-        ""
-      ],
-      "postLikeBool": false,
-      "id": 12
     }
   ]
 }

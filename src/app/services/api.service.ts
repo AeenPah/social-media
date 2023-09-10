@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IPost } from '../interfaces/post.inteface';
+import { IUser } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -8,39 +10,36 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   // post ...
-  postHomePosts(homePost: any) {
-    return this.http.post<any>('http://localhost:3000/homePosts', homePost);
+  postHomePosts(homePost: IPost) {
+    return this.http.post<IPost>('http://localhost:3000/homePosts', homePost);
   }
-  postUsers(user: any) {
+  postUsers(user: IUser) {
     return this.http.post('http://localhost:3000/users', user);
   }
 
   // get ...
   getFromUsers() {
-    return this.http.get<any>('http://localhost:3000/users');
+    return this.http.get<IUser[]>('http://localhost:3000/users');
   }
   getFromUsersById(id: string) {
-    return this.http.get<any>('http://localhost:3000/users/' + id);
+    return this.http.get<IUser>('http://localhost:3000/users/' + id);
   }
   getFromHomePostsIndash(page: number, limit: number) {
-    return this.http.get<any>(
+    return this.http.get<IPost[]>(
       `http://localhost:3000/homePosts?_page=${page}&_limit=${limit}`
     );
   }
   getFromHomePosts() {
-    return this.http.get<any>(`http://localhost:3000/homePosts`);
+    return this.http.get<IPost[]>(`http://localhost:3000/homePosts`);
   }
 
   // put ...
-  putUserById(userId: any, user: any) {
-    return this.http.put<any>('http://localhost:3000/users/' + userId, user);
-  }
-  putHomePosts(id: any, item: any) {
-    return this.http.put<any>('http://localhost:3000/homePosts/' + id, item);
+  putHomePosts(id: number, item: IPost) {
+    return this.http.put<IPost>('http://localhost:3000/homePosts/' + id, item);
   }
 
   // delete ...
-  deleteFromHomePosts(id: any) {
-    return this.http.delete<any>('http://localhost:3000/homePosts/' + id);
+  deleteFromHomePosts(id: number) {
+    return this.http.delete<number>('http://localhost:3000/homePosts/' + id);
   }
 }

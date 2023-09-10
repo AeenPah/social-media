@@ -1,27 +1,29 @@
 <div class="container">
   <div class="user-information">
     <div>profile avatar</div>
-    <div>Full Name : {{ user?.fullName }}</div>
-    <div>Username : {{ user?.username }}</div>
-    <div>Email : {{ user?.email }}</div>
+    <div>Full Name : {{ onlineUser?.fullName }}</div>
+    <div>Username : {{ onlineUser?.username }}</div>
+    <div>Email : {{ onlineUser?.email }}</div>
   </div>
   <hr />
   <hr />
-  <!-- -------- -->
+  <!-- upload-post -->
   <div class="upload-post">
     <div>Let's post something</div>
     <div>
-      <input type="text" [(ngModel)]="posttxt" />
+      <input type="text" #inputPost />
     </div>
-    <button (click)="postText()" class="button button-comment">POST</button>
+    <button (click)="postText(inputPost.value)" class="button button-comment">
+      POST
+    </button>
   </div>
-  <!-- -------- -->
+  <!-- prev-posts -->
   <div class="prev-posts">
-    <div *ngFor="let post of user?.posts; let i = index">
-      <div *ngIf="post != ''">
-        <div class="inner-post">{{ i - 1 }} // {{ post }}</div>
-        <button (click)="deleteTextHome(i)">Delete</button>
-      </div>
+    <div *ngFor="let post of userPosts" class="each-post">
+      <app-each-post
+        [post]="post"
+        [inProfilePageBool]="inProfilePageBool"
+      ></app-each-post>
     </div>
   </div>
 </div>

@@ -1,53 +1,10 @@
 <div class="container">
-  <div class="posts" *ngFor="let item of allPostsInf">
-    <div class="full-name" [routerLink]="['/user-profile/' + item.userid]">
-      {{ allUsersInf[item.userid - 1].fullName }}
-    </div>
-    <div class="post">{{ item.userPost }}</div>
-    <div class="post-reactions">
-      <div class="likes">
-        <div>{{ item.postLikes.length - 1 }}</div>
-        <img
-          src="../../../../assets/icons8-like-24.png"
-          class="heart-liked"
-          (click)="likePost(item)"
-          *ngIf="!item.postLikeBool"
-        />
-        <img
-          src="../../../../assets/icons8-like-48.png"
-          class="heart-liked"
-          *ngIf="item.postLikeBool"
-        />
-      </div>
-
-      <!-- comment section -->
-      <button (click)="showCommentBox(item)" class="button button-comment">
-        Comment
-      </button>
-      <div class="comment-box" *ngIf="item.commentBoxBool">
-        Post Comment
-        <input #commentInput type="text" class="comment-input" /><button
-          (click)="postComment(commentInput.value, item)"
-          class="button button-comment"
-        >
-          Post
-        </button>
-        <div class="posted-comment" *ngIf="item.comments">
-          <div *ngFor="let comment of item.comments">
-            <div *ngIf="comment.by" class="each-comments-part">
-              <div class="comment-by">{{ comment.by }}</div>
-              :
-              <div>{{ comment.comment }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr />
+  <div class="posts" *ngFor="let post of allPostsInf">
+    <app-each-post [post]="post" [allUsersInf]="allUsersInf"></app-each-post>
   </div>
   <!-- page-controler -->
   <div class="page-controller">
-    <div>Page: {{ newCounter }}</div>
+    <div>Page: {{ counter }}</div>
     <button (click)="toPrevPage()" class="button">click to Prev</button>
     <div *ngFor="let page of postNumbersArr">
       <div (click)="goToPage(page)" class="page-numbers">{{ page }}</div>
