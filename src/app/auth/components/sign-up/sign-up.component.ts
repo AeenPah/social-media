@@ -10,7 +10,7 @@ import { IUser } from '../../../interfaces/user.interface';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css'],
 })
-export class SignUpComponent implements IUser {
+export class SignUpComponent {
   formSignUP: FormGroup;
   primaryPosts = ['', ''];
   userData: IUser;
@@ -21,11 +21,6 @@ export class SignUpComponent implements IUser {
     private api: ApiService,
     private destroyRef: DestroyRef
   ) {}
-  fullName: string;
-  username: string;
-  email: string;
-  password: string;
-  posts: string[];
 
   ngOnInit(): void {
     this.formSignUP = this.formBuilder.group({

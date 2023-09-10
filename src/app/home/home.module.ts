@@ -9,6 +9,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EachPostComponent } from './components/each-post/each-post.component';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { EachPostComponent } from './components/each-post/each-post.component';
     UserProfileComponent,
     DashboardComponent,
     EachPostComponent,
+    SearchBoxComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, FormsModule],
 })

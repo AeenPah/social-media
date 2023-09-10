@@ -48,16 +48,12 @@
       "userid": 1,
       "userPost": "I'm Jack Black",
       "commentBoxBool": false,
-      "postLikeBool": true,
+      "postLikeBool": false,
       "likeBoxBool": false,
       "postLikes": [
         {
           "liked": "",
           "likedBy": ""
-        },
-        {
-          "liked": "true",
-          "likedBy": "Jane Astin"
         }
       ],
       "id": 2,
@@ -147,29 +143,6 @@
     },
     {
       "userid": 2,
-      "userPost": "What's up Everyone?",
-      "commentBoxBool": false,
-      "postLikeBool": false,
-      "likeBoxBool": false,
-      "postLikes": [
-        {
-          "liked": "",
-          "likedBy": ""
-        }
-      ],
-      "id": 5,
-      "comments": [
-        {
-          "user": ""
-        },
-        {
-          "comment": "I'm Good.",
-          "by": "Jack Black"
-        }
-      ]
-    },
-    {
-      "userid": 2,
       "userPost": "Comment for mePls!",
       "commentBoxBool": false,
       "postLikeBool": true,
@@ -232,6 +205,10 @@
         {
           "liked": "true",
           "likedBy": "Milo Funny"
+        },
+        {
+          "liked": "true",
+          "likedBy": "Jane Astin"
         }
       ],
       "id": 8,
@@ -290,16 +267,12 @@
       "userid": 1,
       "userPost": "Good Morning!",
       "commentBoxBool": false,
-      "postLikeBool": true,
+      "postLikeBool": false,
       "likeBoxBool": false,
       "postLikes": [
         {
           "liked": "",
           "likedBy": ""
-        },
-        {
-          "liked": "true",
-          "likedBy": "Jane Astin"
         }
       ],
       "id": 11,
@@ -310,6 +283,33 @@
         {
           "comment": "GM<3",
           "by": "Jane Astin"
+        }
+      ]
+    },
+    {
+      "userid": 4,
+      "userPost": "Do I post smth??",
+      "commentBoxBool": false,
+      "postLikeBool": true,
+      "likeBoxBool": false,
+      "postLikes": [
+        {
+          "liked": "",
+          "likedBy": ""
+        },
+        {
+          "liked": "true",
+          "likedBy": "Jack Black"
+        }
+      ],
+      "id": 12,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "yes SURE!",
+          "by": "Jack Black"
         }
       ]
     }

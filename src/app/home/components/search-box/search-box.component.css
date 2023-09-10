@@ -1,0 +1,14 @@
+.container {
+  margin: 0 auto;
+  width: 85%;
+  background-color: #f1eae6;
+  height: 100vh;
+}
+.container > * {
+  margin-left: 40px;
+}
+.title {
+  /* text-align: center; */
+  font-size: 1.55em;
+  padding: 10px 0;
+}
