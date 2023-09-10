@@ -290,15 +290,28 @@
       "userid": 4,
       "userPost": "Do I post smth??",
       "commentBoxBool": false,
-      "postLikeBool": false,
+      "postLikeBool": true,
       "likeBoxBool": false,
       "postLikes": [
         {
           "liked": "",
           "likedBy": ""
+        },
+        {
+          "liked": "true",
+          "likedBy": "Jack Black"
         }
       ],
-      "id": 12
+      "id": 12,
+      "comments": [
+        {
+          "user": ""
+        },
+        {
+          "comment": "yes SURE!",
+          "by": "Jack Black"
+        }
+      ]
     }
   ]
 }
