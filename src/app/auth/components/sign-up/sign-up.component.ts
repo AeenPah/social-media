@@ -1,6 +1,6 @@
 import { Component, DestroyRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { IUser } from '../../../interfaces/user.interface';
@@ -24,11 +24,10 @@ export class SignUpComponent {
 
   ngOnInit(): void {
     this.formSignUP = this.formBuilder.group({
-      fullName: [''],
-      username: [''],
-      email: [''],
-      password: [''],
-      posts: [''],
+      fullName: ['', Validators.required],
+      username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
     });
   }
 

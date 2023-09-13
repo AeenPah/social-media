@@ -18,7 +18,7 @@
 }
 .title {
   font-size: 3em;
-  margin: 30px;
+  margin: 30px 30px 5px 30px;
 }
 .form {
   position: relative;
@@ -29,9 +29,21 @@
   margin-left: 15px;
 }
 .form .input-text {
-  margin: 15px 0;
+  display: block;
   width: 250px;
   height: 40px;
+  margin-bottom: 5px;
+}
+.form label {
+  display: block;
+  margin: 20px 0 8px 0;
+}
+.form .error {
+  text-align: center;
+  color: red;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 50%;
 }
 
 .form .text {
@@ -47,7 +59,10 @@
   color: white;
   background-color: rgb(42, 107, 192);
 }
-.form .submitbtn:hover {
+.form .submitbtn:enabled:hover {
   color: rgb(210, 207, 207);
   background-color: rgb(25, 75, 141);
+}
+.form .submitbtn:disabled {
+  background-color: rgb(84, 136, 204);
 }
